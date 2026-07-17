@@ -103,7 +103,7 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 4rem 0;
+            padding: 4rem 0 2rem 0;
         }
 
         .badge {
@@ -178,7 +178,7 @@
             display: flex;
             justify-content: space-between;
             gap: 1.5rem;
-            margin: 4rem 0;
+            margin: 2rem 0 4rem 0;
             border: 1px solid var(--border-color);
             border-radius: 12px;
             background-color: var(--card-bg);
@@ -217,6 +217,67 @@
             letter-spacing: 0.5px;
         }
 
+        /* --- Infinite Brand Marquee --- */
+        .ticker-section {
+            width: 100%;
+            overflow: hidden;
+            padding: 2.5rem 0;
+            background-color: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin: 4rem 0;
+        }
+
+        .ticker-title {
+            text-align: center;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            width: 100%;
+        }
+
+        .ticker-track {
+            display: flex;
+            gap: 4rem;
+            animation: scroll 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-wrapper:hover .ticker-track {
+            animation-play-state: paused;
+        }
+
+        .ticker-item {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            opacity: 0.5;
+            letter-spacing: -0.5px;
+            transition: opacity 0.3s, color 0.3s;
+            user-select: none;
+        }
+
+        .ticker-item:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
         /* Case Studies Grid Section */
         .case-studies-section h2 {
             font-size: 2rem;
@@ -225,7 +286,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* Updated to 3 columns */
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -243,7 +303,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 380px; /* Ensures balanced height alignment */
+            min-height: 380px;
         }
 
         .case-card:hover {
@@ -319,7 +379,7 @@
         /* Responsive Breakpoints */
         @media (max-width: 992px) {
             .grid {
-                grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -336,7 +396,7 @@
                 display: none;
             }
             .grid {
-                grid-template-columns: 1fr; /* 1 column on mobile */
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -372,19 +432,45 @@
         <section class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">12X</div>
-                <div class="stat-label">Max ROAS Achieved</div>
+                <div class="stat-label">Max ROAS Achieved[cite: 1]</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">€60k+</div>
-                <div class="stat-label">Revenue in 30 Days</div>
+                <div class="stat-label">Revenue in 30 Days[cite: 1]</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">$6</div>
-                <div class="stat-label">B2B Cost Per Lead</div>
+                <div class="stat-label">B2B Cost Per Lead[cite: 1]</div>
             </div>
         </section>
 
-        <!-- Case Studies Grid Section (Now 3 Columns) -->
+        <!-- Infinite Brands Ticker -->
+        <section class="ticker-section">
+            <div class="ticker-title">Brands I've Scaled & Worked With</div>
+            <div class="ticker-wrapper">
+                <div class="ticker-track">
+                    <!-- Group 1 -->
+                    <div class="ticker-item">Decor Ornament</div>
+                    <div class="ticker-item">Alphagon Digitals</div>
+                    <div class="ticker-item">Scentorina</div>
+                    <div class="ticker-item">Dior</div>
+                    <div class="ticker-item">Ralph Lauren</div>
+                    <div class="ticker-item">Cougar</div>
+                    <div class="ticker-item">Fitted</div>
+                    
+                    <!-- Group 2 (Duplicate for loop smoothness) -->
+                    <div class="ticker-item">Decor Ornament</div>
+                    <div class="ticker-item">Alphagon Digitals</div>
+                    <div class="ticker-item">Scentorina</div>
+                    <div class="ticker-item">Dior</div>
+                    <div class="ticker-item">Ralph Lauren</div>
+                    <div class="ticker-item">Cougar</div>
+                    <div class="ticker-item">Fitted</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Grid Section (3 Columns Layout) -->
         <section class="case-studies-section" id="case-studies">
             <h2>Our Expertise & Results</h2>
             <div class="grid">
@@ -394,10 +480,10 @@
                     <div>
                         <div class="case-meta">Performance Marketing</div>
                         <h3>Scaling E-commerce Sales & High-Impact Paid Ads</h3>
-                        <p>Leveraged optimized funnels, custom retargeting setups, and strategic UGC creative testing to consistently generate high ROAS across channels.</p>
+                        <p>Leveraged optimized funnels, custom retargeting setups, and strategic UGC creative testing to consistently generate high ROAS across channels[cite: 1].</p>
                     </div>
                     <div>
-                        <span class="case-stat">Result: Up to 12X ROAS</span>
+                        <span class="case-stat">Result: Up to 12X ROAS[cite: 1]</span>
                     </div>
                 </a>
 
@@ -406,10 +492,10 @@
                     <div>
                         <div class="case-meta">Search Engine Optimization</div>
                         <h3>Growing Organic Traffic & Lead Generation</h3>
-                        <p>Implemented advanced on-page and technical SEO structures. Tracked via GA4 and GSC to continuously optimize search visibility and lower customer acquisition costs.</p>
+                        <p>Implemented advanced on-page and technical SEO structures[cite: 1]. Tracked via GA4 and GSC to continuously optimize search visibility and lower customer acquisition costs[cite: 1].</p>
                     </div>
                     <div>
-                        <span class="case-stat">Result: 200+ Qualified B2B Leads</span>
+                        <span class="case-stat">Result: 200+ Qualified B2B Leads[cite: 1]</span>
                     </div>
                 </a>
 
@@ -418,10 +504,10 @@
                     <div>
                         <div class="case-meta">Social Media Management</div>
                         <h3>Organic Growth & Brand Audience Scaling</h3>
-                        <p>Engineered comprehensive content calendars and organic engagement strategies that built authority and scaled monthly organic content views.</p>
+                        <p>Engineered comprehensive content calendars and organic engagement strategies that built authority and scaled monthly organic content views[cite: 1].</p>
                     </div>
                     <div>
-                        <span class="case-stat">Result: 400K+ Monthly Views</span>
+                        <span class="case-stat">Result: 400K+ Monthly Views[cite: 1]</span>
                     </div>
                 </a>
 
