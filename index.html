@@ -345,7 +345,7 @@
             display: inline-block;
         }
 
-        /* --- Testimonials Section (Carousel Format) --- */
+        /* --- Testimonials Section --- */
         .testimonials-section {
             margin: 6rem 0;
             width: 100%;
@@ -367,7 +367,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* Carousel Wrapper Window */
         .testimonial-carousel-window {
             width: 100%;
             overflow: hidden;
@@ -376,27 +375,24 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* The Moving Track */
         .testimonial-track {
             display: flex;
             animation: scrollTestimonials 35s linear infinite;
             width: max-content;
         }
 
-        /* Pause moving when user is reading closely */
         .testimonial-carousel-window:hover .testimonial-track {
             animation-play-state: paused;
         }
 
-        /* Exact Box Styling matching the left screenshot */
         .testimonial-card {
-            width: 380px; /* Fixed clean card size */
+            width: 380px;
             padding: 2.5rem 2rem;
             border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            background-color: transparent; /* No inner panel background tint */
+            background-color: transparent;
         }
 
         .quote-icon {
@@ -430,10 +426,9 @@
             font-weight: 500;
         }
 
-        /* Infinite Loop Animation for the Testimonials */
         @keyframes scrollTestimonials {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Halfway down the duplicated track */
+            100% { transform: translateX(-50%); }
         }
 
         /* Footer styling */
@@ -523,15 +518,15 @@
         <section class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">12X</div>
-                <div class="stat-label">Max ROAS Achieved[cite: 1]</div>
+                <div class="stat-label">Max ROAS Achieved</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">€60k+</div>
-                <div class="stat-label">Revenue in 30 Days[cite: 1]</div>
+                <div class="stat-label">Revenue in 30 Days</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">$6</div>
-                <div class="stat-label">B2B Cost Per Lead[cite: 1]</div>
+                <div class="stat-label">B2B Cost Per Lead</div>
             </div>
         </section>
 
@@ -571,10 +566,10 @@
                     <div>
                         <div class="case-meta">Performance Marketing</div>
                         <h3>Scaling E-commerce Sales & High-Impact Paid Ads</h3>
-                        <p>Leveraged optimized funnels, custom retargeting setups, and strategic UGC creative testing to consistently generate high ROAS across channels[cite: 1].</p>
+                        <p>Leveraged optimized funnels, custom retargeting setups, and strategic UGC creative testing to consistently generate high ROAS across channels.</p>
                     </div>
                     <div>
-                        <span class="case-stat">Result: Up to 12X ROAS[cite: 1]</span>
+                        <span class="case-stat">Result: Up to 12X ROAS</span>
                     </div>
                 </a>
 
@@ -583,10 +578,10 @@
                     <div>
                         <div class="case-meta">Search Engine Optimization</div>
                         <h3>Growing Organic Traffic & Lead Generation</h3>
-                        <p>Implemented advanced on-page and technical SEO structures[cite: 1]. Tracked via GA4 and GSC to continuously optimize search visibility and lower customer acquisition costs[cite: 1].</p>
+                        <p>Implemented advanced on-page and technical SEO structures. Tracked via GA4 and GSC to continuously optimize search visibility and lower customer acquisition costs.</p>
                     </div>
                     <div>
-                        <span class="case-stat">Result: 200+ Qualified B2B Leads[cite: 1]</span>
+                        <span class="case-stat">Result: 200+ Qualified B2B Leads</span>
                     </div>
                 </a>
 
@@ -595,17 +590,17 @@
                     <div>
                         <div class="case-meta">Social Media Management</div>
                         <h3>Organic Growth & Brand Audience Scaling</h3>
-                        <p>Engineered comprehensive content calendars and organic engagement strategies that built authority and scaled monthly organic content views[cite: 1].</p>
+                        <p>Engineered comprehensive content calendars and organic engagement strategies that built authority and scaled monthly organic content views.</p>
                     </div>
                     <div>
-                        <span class="case-stat">Result: 400K+ Monthly Views[cite: 1]</span>
+                        <span class="case-stat">Result: 400K+ Monthly Views</span>
                     </div>
                 </a>
 
             </div>
         </section>
 
-        <!-- --- Fixed Structural Testimonials Carousel Section --- -->
+        <!-- Testimonials Carousel Section -->
         <section class="testimonials-section" id="testimonials">
             <div class="sub-title">What Clients Say</div>
             <h2>Testimonials</h2>
@@ -614,11 +609,10 @@
                 <div class="testimonial-track">
                     
                     <!-- GROUP 1 -->
-                    <!-- Testimonial 1: Paid Ads Focus -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.[cite: 1]</p>
+                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.</p>
                         </div>
                         <div class="client-info">
                             <h4>Marcus Vance</h4>
@@ -626,11 +620,10 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 2: SEO Focus -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.[cite: 1]</p>
+                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.</p>
                         </div>
                         <div class="client-info">
                             <h4>Sarah Jenkins</h4>
@@ -638,11 +631,10 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 3: Social Media Management Focus -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.[cite: 1]</p>
+                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.</p>
                         </div>
                         <div class="client-info">
                             <h4>Aman Malik</h4>
@@ -650,11 +642,10 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 4: Business Strategy Focus -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.[cite: 1]</p>
+                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.</p>
                         </div>
                         <div class="client-info">
                             <h4>Elena Rostova</h4>
@@ -662,12 +653,11 @@
                         </div>
                     </div>
 
-                    <!-- GROUP 2 (Duplicate for Infinite Rolling Loop Effect) -->
-                    <!-- Testimonial 1: Paid Ads Focus -->
+                    <!-- GROUP 2 (Duplicate for Continuous Loop) -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.[cite: 1]</p>
+                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.</p>
                         </div>
                         <div class="client-info">
                             <h4>Marcus Vance</h4>
@@ -675,11 +665,10 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 2: SEO Focus -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.[cite: 1]</p>
+                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.</p>
                         </div>
                         <div class="client-info">
                             <h4>Sarah Jenkins</h4>
@@ -687,11 +676,10 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 3: Social Media Management Focus -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.[cite: 1]</p>
+                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.</p>
                         </div>
                         <div class="client-info">
                             <h4>Aman Malik</h4>
@@ -699,11 +687,10 @@
                         </div>
                     </div>
 
-                    <!-- Testimonial 4: Business Strategy Focus -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
-                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.[cite: 1]</p>
+                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.</p>
                         </div>
                         <div class="client-info">
                             <h4>Elena Rostova</h4>
@@ -719,9 +706,9 @@
     <footer>
         <p>&copy; 2026 Fakhar Hayat. All rights reserved.</p>
         <ul class="social-links">
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/fkhr.awan/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/fakhr.awan786" target="_blank">Facebook</a></li>
         </ul>
     </footer>
 
