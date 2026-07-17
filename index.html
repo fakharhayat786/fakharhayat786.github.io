@@ -24,6 +24,7 @@
             --text-muted: #9ca3af;
             --border-color: #1f2937;
             --footer-bg: #090d16;
+            --prefooter-bg: #0c1524; /* Slightly lighter navy for distinct pre-footer banner */
             --orange-btn: #e07036; /* Exact Apply Now Button Orange */
         }
 
@@ -439,13 +440,65 @@
             100% { transform: translateX(-50%); }
         }
 
+        /* --- NEW PRE-FOOTER CTA BANNER --- */
+        .pre-footer-cta {
+            background-color: var(--prefooter-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 2rem;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .pre-footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .pre-footer-cta h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #fff;
+            max-width: 600px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .pre-footer-btn {
+            background-color: var(--orange-btn);
+            color: #fff;
+            padding: 0.95rem 2.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: opacity 0.2s, transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .pre-footer-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
         /* --- STYLIZED BRAND FOOTER --- */
         .site-footer {
             background-color: var(--footer-bg);
             border-top: 1px solid var(--border-color);
             padding: 5rem 2rem 4rem 2rem;
             position: relative;
-            margin-top: 8rem;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
         }
 
         .footer-container {
@@ -578,7 +631,7 @@
             opacity: 0.95;
         }
 
-        /* Essential Scroll to Top Bubble Utility */
+        /* Sticky Floating Back to Top Control Bubble */
         .scroll-top-utility {
             position: absolute;
             right: 2.5rem;
@@ -598,6 +651,18 @@
 
         .scroll-top-utility:hover {
             transform: translateY(-3px);
+        }
+
+        /* Pre-Footer Responsive Control */
+        @media (max-width: 768px) {
+            .pre-footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .pre-footer-cta h2 {
+                font-size: 1.85rem;
+            }
         }
 
         /* Footer Responsive Control */
@@ -865,7 +930,15 @@
         </section>
     </main>
 
-    <!-- NEW RECONFIGURED BRAND FOOTER -->
+    <!-- NEW PRE-FOOTER CTA BANNER -->
+    <section class="pre-footer-cta">
+        <div class="pre-footer-container">
+            <h2>Want More Customers, Clients And Sales Than You Could Possibly Handle?</h2>
+            <a href="#contact" class="pre-footer-btn">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- BRAND FOOTER -->
     <footer class="site-footer" id="contact">
         <div class="footer-container">
             
@@ -909,7 +982,6 @@
             <div class="footer-cta">
                 <h3>Stay <span>Connected</span> With Me</h3>
                 <div class="footer-social-blocks">
-                    <!-- Upwork / Alternative Icon space placeholder -->
                     <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" target="_blank" class="social-block" title="Upwork Portal">
                         <i class="fa-solid fa-briefcase"></i>
                     </a>
