@@ -279,6 +279,10 @@
         }
 
         /* Case Studies Grid Section */
+        .case-studies-section {
+            margin-bottom: 6rem;
+        }
+
         .case-studies-section h2 {
             font-size: 2rem;
             font-weight: 700;
@@ -345,6 +349,77 @@
             display: inline-block;
         }
 
+        /* --- Testimonials Section Styling --- */
+        .testimonials-section {
+            margin: 6rem 0;
+        }
+
+        .testimonials-section .sub-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px; /* Creates modern structural border outline look */
+            background-color: var(--border-color); /* Line color between blocks */
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .testimonial-card {
+            background-color: #0d121f; /* Slightly darker than grid background */
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 340px;
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            font-family: Georgia, serif;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .testimonial-text {
+            color: var(--text-main);
+            font-size: 1.05rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            letter-spacing: -0.2px;
+        }
+
+        .client-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
+        }
+
+        .client-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
         /* Footer styling */
         footer {
             border-top: 1px solid var(--border-color);
@@ -377,6 +452,12 @@
         }
 
         /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 992px) {
             .grid {
                 grid-template-columns: 1fr 1fr;
@@ -395,7 +476,7 @@
             .stat-item:not(:last-child)::after {
                 display: none;
             }
-            .grid {
+            .grid, .testimonials-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -458,7 +539,7 @@
                     <div class="ticker-item">Cougar</div>
                     <div class="ticker-item">Fitted</div>
                     
-                    <!-- Group 2 (Duplicate for loop smoothness) -->
+                    <!-- Group 2 -->
                     <div class="ticker-item">Decor Ornament</div>
                     <div class="ticker-item">Alphagon Digitals</div>
                     <div class="ticker-item">Scentorina</div>
@@ -510,6 +591,63 @@
                         <span class="case-stat">Result: 400K+ Monthly Views[cite: 1]</span>
                     </div>
                 </a>
+
+            </div>
+        </section>
+
+        <!-- --- New Testimonials Section --- -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="sub-title">What Clients Say</div>
+            <h2>Testimonials</h2>
+            <div class="testimonials-grid">
+                
+                <!-- Testimonial 1: Paid Ads Focus -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">Our ad spend was burning cash until we shifted. The level of analytics precision and custom UGC creative testing completely turned around our ROAS metrics[cite: 1].</p>
+                    </div>
+                    <div class="client-info">
+                        <h4>Marcus Vance</h4>
+                        <p>E-commerce Director, Scentorina</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2: SEO Focus -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">The deep structural approach to technical and on-page SEO gave us visibility we hadn't hit before[cite: 1]. Organic pipeline results tracked via GA4 explicitly proved the value[cite: 1].</p>
+                    </div>
+                    <div class="client-info">
+                        <h4>Sarah Jenkins</h4>
+                        <p>Operations Lead, Software Market Hub</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3: Social Media Management Focus -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">Consistency and clarity of voice across platforms was our biggest challenge. The organized content frameworks scaled our unique monthly audience reach beyond expectations[cite: 1].</p>
+                    </div>
+                    <div class="client-info">
+                        <h4>Aman Malik</h4>
+                        <p>Founder, Decor Ornament</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4: Business Strategy Focus -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="quote-icon">“</div>
+                        <p class="testimonial-text">Working together felt less like hiring a basic task vendor and far more like having a dedicated growth strategist who mapped content funnels directly to our core revenue targets[cite: 1].</p>
+                    </div>
+                    <div class="client-info">
+                        <h4>Elena Rostova</h4>
+                        <p>Head of Growth, Apex B2B Sol</p>
+                    </div>
+                </div>
 
             </div>
         </section>
