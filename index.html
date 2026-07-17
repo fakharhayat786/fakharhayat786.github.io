@@ -246,7 +246,7 @@
         .ticker-track {
             display: flex;
             gap: 4rem;
-            animation: scroll 25s linear infinite;
+            animation: scrollBrands 25s linear infinite;
             white-space: nowrap;
         }
 
@@ -269,13 +269,9 @@
             color: var(--accent-color);
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+        @keyframes scrollBrands {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* Case Studies Grid Section */
@@ -349,9 +345,10 @@
             display: inline-block;
         }
 
-        /* --- Testimonials Section Styling --- */
+        /* --- Testimonials Section (Carousel Format) --- */
         .testimonials-section {
             margin: 6rem 0;
+            width: 100%;
         }
 
         .testimonials-section .sub-title {
@@ -370,41 +367,54 @@
             letter-spacing: -0.5px;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1px; /* Creates modern structural border outline look */
-            background-color: var(--border-color); /* Line color between blocks */
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+        /* Carousel Wrapper Window */
+        .testimonial-carousel-window {
+            width: 100%;
             overflow: hidden;
+            position: relative;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
+        /* The Moving Track */
+        .testimonial-track {
+            display: flex;
+            animation: scrollTestimonials 35s linear infinite;
+            width: max-content;
+        }
+
+        /* Pause moving when user is reading closely */
+        .testimonial-carousel-window:hover .testimonial-track {
+            animation-play-state: paused;
+        }
+
+        /* Exact Box Styling matching the left screenshot */
         .testimonial-card {
-            background-color: #0d121f; /* Slightly darker than grid background */
+            width: 380px; /* Fixed clean card size */
             padding: 2.5rem 2rem;
+            border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 340px;
+            background-color: transparent; /* No inner panel background tint */
         }
 
         .quote-icon {
-            font-size: 2.5rem;
-            font-family: Georgia, serif;
-            color: var(--accent-color);
+            font-size: 2rem;
+            font-family: Arial, sans-serif;
+            color: var(--text-main);
+            font-weight: bold;
             line-height: 1;
-            margin-bottom: 1rem;
-            opacity: 0.8;
+            margin-bottom: 1.2rem;
         }
 
         .testimonial-text {
             color: var(--text-main);
-            font-size: 1.05rem;
-            font-weight: 500;
-            line-height: 1.5;
+            font-size: 1.15rem;
+            font-weight: 400;
+            line-height: 1.4;
             margin-bottom: 2rem;
-            letter-spacing: -0.2px;
+            letter-spacing: -0.3px;
         }
 
         .client-info h4 {
@@ -418,6 +428,12 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             font-weight: 500;
+        }
+
+        /* Infinite Loop Animation for the Testimonials */
+        @keyframes scrollTestimonials {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Halfway down the duplicated track */
         }
 
         /* Footer styling */
@@ -452,12 +468,6 @@
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 1024px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         @media (max-width: 992px) {
             .grid {
                 grid-template-columns: 1fr 1fr;
@@ -476,7 +486,7 @@
             .stat-item:not(:last-child)::after {
                 display: none;
             }
-            .grid, .testimonials-grid {
+            .grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -595,60 +605,113 @@
             </div>
         </section>
 
-        <!-- --- New Testimonials Section --- -->
+        <!-- --- Fixed Structural Testimonials Carousel Section --- -->
         <section class="testimonials-section" id="testimonials">
             <div class="sub-title">What Clients Say</div>
             <h2>Testimonials</h2>
-            <div class="testimonials-grid">
-                
-                <!-- Testimonial 1: Paid Ads Focus -->
-                <div class="testimonial-card">
-                    <div>
-                        <div class="quote-icon">“</div>
-                        <p class="testimonial-text">Our ad spend was burning cash until we shifted. The level of analytics precision and custom UGC creative testing completely turned around our ROAS metrics[cite: 1].</p>
+            
+            <div class="testimonial-carousel-window">
+                <div class="testimonial-track">
+                    
+                    <!-- GROUP 1 -->
+                    <!-- Testimonial 1: Paid Ads Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Marcus Vance</h4>
+                            <p>E-commerce Director, Scentorina</p>
+                        </div>
                     </div>
-                    <div class="client-info">
-                        <h4>Marcus Vance</h4>
-                        <p>E-commerce Director, Scentorina</p>
-                    </div>
-                </div>
 
-                <!-- Testimonial 2: SEO Focus -->
-                <div class="testimonial-card">
-                    <div>
-                        <div class="quote-icon">“</div>
-                        <p class="testimonial-text">The deep structural approach to technical and on-page SEO gave us visibility we hadn't hit before[cite: 1]. Organic pipeline results tracked via GA4 explicitly proved the value[cite: 1].</p>
+                    <!-- Testimonial 2: SEO Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Sarah Jenkins</h4>
+                            <p>Operations Lead, Software Market Hub</p>
+                        </div>
                     </div>
-                    <div class="client-info">
-                        <h4>Sarah Jenkins</h4>
-                        <p>Operations Lead, Software Market Hub</p>
-                    </div>
-                </div>
 
-                <!-- Testimonial 3: Social Media Management Focus -->
-                <div class="testimonial-card">
-                    <div>
-                        <div class="quote-icon">“</div>
-                        <p class="testimonial-text">Consistency and clarity of voice across platforms was our biggest challenge. The organized content frameworks scaled our unique monthly audience reach beyond expectations[cite: 1].</p>
+                    <!-- Testimonial 3: Social Media Management Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Aman Malik</h4>
+                            <p>Founder, Decor Ornament</p>
+                        </div>
                     </div>
-                    <div class="client-info">
-                        <h4>Aman Malik</h4>
-                        <p>Founder, Decor Ornament</p>
-                    </div>
-                </div>
 
-                <!-- Testimonial 4: Business Strategy Focus -->
-                <div class="testimonial-card">
-                    <div>
-                        <div class="quote-icon">“</div>
-                        <p class="testimonial-text">Working together felt less like hiring a basic task vendor and far more like having a dedicated growth strategist who mapped content funnels directly to our core revenue targets[cite: 1].</p>
+                    <!-- Testimonial 4: Business Strategy Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Elena Rostova</h4>
+                            <p>Head of Growth, Apex B2B Sol</p>
+                        </div>
                     </div>
-                    <div class="client-info">
-                        <h4>Elena Rostova</h4>
-                        <p>Head of Growth, Apex B2B Sol</p>
-                    </div>
-                </div>
 
+                    <!-- GROUP 2 (Duplicate for Infinite Rolling Loop Effect) -->
+                    <!-- Testimonial 1: Paid Ads Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Marcus Vance</h4>
+                            <p>E-commerce Director, Scentorina</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2: SEO Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Sarah Jenkins</h4>
+                            <p>Operations Lead, Software Market Hub</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3: Social Media Management Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Aman Malik</h4>
+                            <p>Founder, Decor Ornament</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4: Business Strategy Focus -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.[cite: 1]</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Elena Rostova</h4>
+                            <p>Head of Growth, Apex B2B Sol</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
