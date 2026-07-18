@@ -43,6 +43,9 @@
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper.js CSS Assets for Carousel Implementation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         /* --------------------------------------------------------------------------
@@ -658,15 +661,17 @@
         }
 
         /* --------------------------------------------------------------------------
-           9. MY CASE STUDIES SECTION
+           9. MY CASE STUDIES SECTION (SaaS Slider Engine Architecture)
            -------------------------------------------------------------------------- */
         .case-section {
             padding: 6rem 0;
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
             background: rgba(255,255,255,0.01);
+            overflow: hidden; /* Critical fix for Swiper layouts */
         }
 
+        /* Default Layout on Desktop (Clean Grid) */
         .case-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -681,6 +686,8 @@
             display: flex;
             flex-direction: column;
             transition: var(--transition-smooth);
+            height: 100%;
+            width: 100%;
         }
 
         .case-card:hover {
@@ -692,6 +699,7 @@
             height: 220px;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: var(--text-muted);
@@ -742,6 +750,7 @@
             font-size: 0.85rem;
             display: inline-block;
             margin: 1rem 0 1.5rem 0;
+            align-self: flex-start;
         }
 
         .case-btn {
@@ -762,6 +771,23 @@
             background: var(--text-pure);
             color: var(--bg-deep);
             border-color: var(--text-pure);
+        }
+
+        /* Swiper Custom Active Dots */
+        .swiper-pagination {
+            position: relative !important;
+            margin-top: 2rem;
+        }
+        .swiper-pagination-bullet {
+            background: var(--text-muted) !important;
+            opacity: 0.4;
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--accent-primary) !important;
+            opacity: 1 !important;
+            width: 18px !important;
+            border-radius: 5px !important;
+            transition: var(--transition-smooth);
         }
 
         /* --------------------------------------------------------------------------
@@ -1208,15 +1234,12 @@
             .profile-wrapper {
                 height: 320px;
             }
-            .services-grid, .why-grid, .case-grid, .testimonials-grid {
+            .services-grid, .why-grid, .testimonials-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .metrics-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
-            }
-            .tools-grid {
-                grid-template-columns: repeat(3, 1fr);
             }
             .process-timeline {
                 flex-direction: column;
@@ -1263,7 +1286,7 @@
             .nav-menu.active {
                 left: 0;
             }
-            .services-grid, .why-grid, .case-grid, .testimonials-grid, .metrics-grid, .tools-grid, .footer-grid {
+            .services-grid, .why-grid, .testimonials-grid, .metrics-grid, .footer-grid {
                 grid-template-columns: 1fr;
             }
             .hero-content h1 {
@@ -1278,6 +1301,37 @@
             }
             .contact-box h2 {
                 font-size: 1.85rem;
+            }
+
+            /* 
+               CRITICAL FIX 1: Mobile Row Layout Adaptation for Tech Stack Cards
+            */
+            .tools-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important; /* Force 3 side-by-side items per row */
+                gap: 10px !important;
+                padding: 5px;
+            }
+            .tool-card {
+                padding: 12px 6px !important;
+                gap: 6px !important;
+            }
+            .tool-card i {
+                font-size: 1.25rem !important;
+            }
+            .tool-card text, .tools-grid {
+                font-size: 0.7rem !important; /* Scale content metrics downwards cleanly */
+            }
+
+            /* 
+               CRITICAL FIX 2: Swiper Layout Adaptation Override for Mobile Viewports
+            */
+            .case-grid {
+                display: flex !important; /* Switch grid properties to flex for slide rows */
+            }
+            .swiper-slide {
+                height: auto !important; /* Equalize card heights inside carousels */
+                display: flex;
             }
         }
     </style>
@@ -1342,7 +1396,6 @@
     <section class="container about-section" id="about">
         <div class="about-grid">
             <div class="profile-wrapper">
-                <!-- Swapped the icon placeholder for a direct image asset -->
                 <img src="assets/profile.jpg" alt="Fakhar Hayat - Performance Marketing Specialist" class="profile-image">
             </div>
             <div class="about-content">
@@ -1539,63 +1592,74 @@
         </div>
     </section>
 
-    <!-- REDESIGNED STRUCTURAL CASE STUDIES SECTION -->
+    <!-- REDESIGNED STRUCTURAL CASE STUDIES SECTION (Enhanced Slider Carousel Container) -->
     <section class="case-section" id="case-studies">
         <div class="container">
             <span class="section-tag">Real-World Case Breakdowns</span>
             <h2 class="section-title">My <span>Case Studies</span></h2>
-            <div class="case-grid">
+            
+            <!-- Swiper Frame Wrapper -->
+            <div class="swiper case-studies-swiper">
+                <div class="swiper-wrapper case-grid">
+                    
+                    <!-- Case Study 1 -->
+                    <div class="swiper-slide">
+                        <div class="case-card">
+                            <div class="case-thumb-placeholder" aria-hidden="true">
+                                <i class="fa-solid fa-chart-column" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
+                                <span>[ E-Commerce Scale Case View ]</span>
+                            </div>
+                            <div class="case-body">
+                                <h3>Scaling Direct-To-Consumer Store to Consistent Sales Volume</h3>
+                                <div class="case-block">
+                                    <strong>Challenge</strong>
+                                    <p>Stagnating conversion return thresholds and volatile ad account tracking fluctuations across multi-variant audiences.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Solution</strong>
+                                    <p>Engineered comprehensive user-generated creative testing loops along with a complete clean rewrite of the data server API tracking engine.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Results</strong>
+                                    <p>Stabilized customer acquisition trends over a brief lifecycle span, driving scalable numbers efficiently.</p>
+                                </div>
+                                <span class="case-result-badge">Result: Up to 12X Peak ROAS</span>
+                                <a href="#" class="case-btn">Read Full Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="swiper-slide">
+                        <div class="case-card">
+                            <div class="case-thumb-placeholder" aria-hidden="true">
+                                <i class="fa-solid fa-arrow-up-right-dots" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
+                                <span>[ B2B Lead Acquisition Case View ]</span>
+                            </div>
+                            <div class="case-body">
+                                <h3>Driving Premium Corporate Accounts for Professional B2B Firm</h3>
+                                <div class="case-block">
+                                    <strong>Challenge</strong>
+                                    <p>Exorbitant digital click rates yielding underqualified profile inquiries that bogged down active sales operators.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Solution</strong>
+                                    <p>Restructured targeted search parameters coupled with high-intent question filters built into landing page flows.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Results</strong>
+                                    <p>Slashed acquisition spend overhead while accelerating actual downstream sales interactions safely.</p>
+                                </div>
+                                <span class="case-result-badge">Result: 200+ Qualified High-Intent Leads</span>
+                                <a href="#" class="case-btn">Read Full Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 
-                <!-- Case Study 1 -->
-                <div class="case-card">
-                    <div class="case-thumb-placeholder" aria-hidden="true">
-                        <i class="fa-solid fa-chart-column" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
-                        <span>[ E-Commerce Scale Case View ]</span>
-                    </div>
-                    <div class="case-body">
-                        <h3>Scaling Direct-To-Consumer Store to Consistent Sales Volume</h3>
-                        <div class="case-block">
-                            <strong>Challenge</strong>
-                            <p>Stagnating conversion return thresholds and volatile ad account tracking fluctuations across multi-variant audiences.</p>
-                        </div>
-                        <div class="case-block">
-                            <strong>Solution</strong>
-                            <p>Engineered comprehensive user-generated creative testing loops along with a complete clean rewrite of the data server API tracking engine.</p>
-                        </div>
-                        <div class="case-block">
-                            <strong>Results</strong>
-                            <p>Stabilized customer acquisition trends over a brief lifecycle span, driving scalable numbers efficiently.</p>
-                        </div>
-                        <span class="case-result-badge">Result: Up to 12X Peak ROAS</span>
-                        <a href="#" class="case-btn">Read Full Case Study</a>
-                    </div>
-                </div>
-
-                <!-- Case Study 2 -->
-                <div class="case-card">
-                    <div class="case-thumb-placeholder" aria-hidden="true">
-                        <i class="fa-solid fa-arrow-up-right-dots" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
-                        <span>[ B2B Lead Acquisition Case View ]</span>
-                    </div>
-                    <div class="case-body">
-                        <h3>Driving Premium Corporate Accounts for Professional B2B Firm</h3>
-                        <div class="case-block">
-                            <strong>Challenge</strong>
-                            <p>Exorbitant digital click rates yielding underqualified profile inquiries that bogged down active sales operators.</p>
-                        </div>
-                        <div class="case-block">
-                            <strong>Solution</strong>
-                            <p>Restructured targeted search parameters coupled with high-intent question filters built into landing page flows.</p>
-                        </div>
-                        <div class="case-block">
-                            <strong>Results</strong>
-                            <p>Slashed acquisition spend overhead while accelerating actual downstream sales interactions safely.</p>
-                        </div>
-                        <span class="case-result-badge">Result: 200+ Qualified High-Intent Leads</span>
-                        <a href="#" class="case-btn">Read Full Case Study</a>
-                    </div>
-                </div>
-
+                <!-- Swiper Navigation Indicator Bullets -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -1812,7 +1876,28 @@
     </footer>
 
     <!-- LIGHTWEIGHT NATIVE UI SCRIPTS -->
+    <!-- Swiper JavaScript Engine Core Assets -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // Initialize the Case Study Responsive Slider Engine
+        const swiper = new Swiper('.case-studies-swiper', {
+            slidesPerView: 1,       /* 1 Card at a time on standard mobile widths */
+            spaceBetween: 20,       /* Safe spacing gap between sliding viewports */
+            loop: false,            /* Prevent infinite clone loops */
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,    /* Enable structural jumping dot updates */
+            },
+            breakpoints: {
+                // When layout monitors scale back up over 768px (Desktop view)
+                768: {
+                    slidesPerView: 2, /* Side-by-side columns */
+                    spaceBetween: 40,
+                    allowTouchMove: false /* Disable drag physics when viewing columns side by side */
+                }
+            }
+        });
+
         // Responsive Hamburger Mobile Nav Toggle Engine
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
