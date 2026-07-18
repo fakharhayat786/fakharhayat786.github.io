@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fakhar Hayat | Performance Marketing & SMM Specialist</title>
-    <!-- Added Font Awesome for the exact social and utility icons -->
+    <!-- Font Awesome for social and utility icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* CSS reset and custom variables */
@@ -25,8 +25,8 @@
             --border-color: #1f2937;
             --footer-bg: #090d16;
             --prefooter-bg: #0c1524;
-            --orange-btn: #e07036; /* Exact Apply Now Button Orange */
-            --teal-shape: #00b4d8; /* Distinct teal color for the service shapes from screenshot */
+            --orange-btn: #e07036; /* Apply Now Button Orange */
+            --teal-shape: #00b4d8; /* Teal color for the service shapes */
         }
 
         html {
@@ -37,6 +37,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Header Navigation */
@@ -355,7 +356,7 @@
             display: inline-block;
         }
 
-        /* --- NEW STYLIZED SERVICES SECTION (Matches Layout Structure From Screenshot) --- */
+        /* Services Section Layout */
         .services-section {
             margin: 6rem 0;
             text-align: center;
@@ -410,12 +411,11 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Distinct organic stylized icon shape matching screenshot layout */
         .service-icon-shape {
             width: 75px;
             height: 75px;
             background-color: var(--teal-shape);
-            border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; /* Organic pebble shape */
+            border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -441,10 +441,9 @@
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 2rem;
-            flex-grow: 1; /* Keeps description area unified */
+            flex-grow: 1;
         }
 
-        /* Standardized Action Button inside every service card */
         .service-action-btn {
             background-color: transparent;
             color: var(--accent-color);
@@ -464,7 +463,7 @@
             border-color: var(--accent-color);
         }
 
-        /* --- Testimonials Section --- */
+        /* Testimonials Section */
         .testimonials-section {
             margin: 6rem 0;
             width: 100%;
@@ -550,7 +549,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* --- PRE-FOOTER CTA BANNER --- */
+        /* Pre-Footer Banner */
         .pre-footer-cta {
             background-color: var(--prefooter-bg);
             border-top: 1px solid var(--border-color);
@@ -598,7 +597,7 @@
             transform: translateY(-2px);
         }
 
-        /* --- STYLIZED BRAND FOOTER --- */
+        /* Footer Layout Structure */
         .site-footer {
             background-color: var(--footer-bg);
             border-top: 1px solid var(--border-color);
@@ -619,7 +618,6 @@
             gap: 2.5rem;
         }
 
-        /* Left Branding Column */
         .footer-brand .footer-logo {
             font-size: 2rem;
             font-weight: 700;
@@ -640,7 +638,6 @@
             line-height: 1.5;
         }
 
-        /* Navigation Links Columns */
         .footer-column h3 {
             color: #fff;
             font-size: 1rem;
@@ -667,7 +664,6 @@
             color: #fff;
         }
 
-        /* Stay Connected & CTA Right Column */
         .footer-cta h3 {
             color: #fff;
             font-size: 1.1rem;
@@ -676,10 +672,9 @@
         }
 
         .footer-cta h3 span {
-            color: #587ef4; /* Connected Accent Color */
+            color: #587ef4;
         }
 
-        /* Blocky Social Icons Matching Screenshot Layout */
         .footer-social-blocks {
             display: flex;
             gap: 0.6rem;
@@ -719,7 +714,6 @@
             font-weight: 500;
         }
 
-        /* Distinct Orange Apply Now Button */
         .footer-apply-btn {
             display: block;
             width: 100%;
@@ -741,7 +735,6 @@
             opacity: 0.95;
         }
 
-        /* Sticky Floating Back to Top Control Bubble */
         .scroll-top-utility {
             position: absolute;
             right: 2.5rem;
@@ -763,32 +756,13 @@
             transform: translateY(-3px);
         }
 
-        /* Services Responsive Adjustments */
+        /* ==========================================================================
+           RESPONSIVE MOBILE BREAKPOINTS & INTERFACE BUG FIXES (max-width: 768px)
+           ========================================================================== */
         @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .grid {
+                grid-template-columns: 1fr 1fr;
             }
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .services-section h2 {
-                font-size: 2rem;
-            }
-            .pre-footer-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
-            }
-            .pre-footer-cta h2 {
-                font-size: 1.85rem;
-            }
-        }
-
-        /* Footer Responsive Control */
-        @media (max-width: 968px) {
             .footer-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 3rem;
@@ -798,40 +772,101 @@
             }
         }
 
-        @media (max-width: 576px) {
-            .footer-container {
+        @media (max-width: 768px) {
+            /* General Elements */
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .grid {
                 grid-template-columns: 1fr;
             }
-            .footer-container > :last-child {
-                grid-column: span 1;
+
+            /* FIX 1: Keep Metrics Line in a Row Form on Mobile */
+            .stats-grid {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 0.5rem;
+                padding: 1rem 0.5rem;
+            }
+            .stat-item {
+                padding: 0 4px;
+            }
+            .stat-number {
+                font-size: 1.6rem;
+            }
+            .stat-label {
+                font-size: 0.65rem;
+                letter-spacing: 0px;
+            }
+
+            /* FIX 2: Convert Services Grid into a horizontal swipe carousel on mobile */
+            .services-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1.25rem;
+                padding: 1rem 0.5rem 2rem 0.5rem;
+                text-align: left;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Hide scrollbar for clean look */
+            }
+            .services-grid::-webkit-scrollbar {
+                display: none;
+            }
+            .service-card {
+                flex: 0 0 85%; /* Shows part of the next card so user knows they can swipe */
+                scroll-snap-align: center;
+                padding: 2.5rem 1.5rem;
+            }
+
+            /* FIX 3: Turn Testimonials into native touch swipe carousel interface */
+            .testimonial-carousel-window {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .testimonial-carousel-window::-webkit-scrollbar {
+                display: none;
+            }
+            .testimonial-track {
+                animation: none; /* Stop linear scroll on mobile to allow interactive touch swipe */
+                display: flex;
+                padding: 1rem 0.5rem;
+            }
+            .testimonial-card {
+                width: 290px;
+                flex-shrink: 0;
+                border-right: 1px solid var(--border-color);
+                scroll-snap-align: start;
+            }
+
+            /* FIX 4: Layout Footer Menus side-by-side (in front of each other) */
+            .footer-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 clean columns side by side */
+                gap: 2rem 1rem;
+            }
+            .footer-brand {
+                grid-column: span 2;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 1.5rem;
+            }
+            .footer-cta {
+                grid-column: span 2;
+                border-top: 1px solid var(--border-color);
+                padding-top: 1.5rem;
+            }
+            .pre-footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .pre-footer-cta h2 {
+                font-size: 1.65rem;
             }
             .scroll-top-utility {
                 right: 1.5rem;
                 bottom: 1.5rem;
-            }
-        }
-
-        /* Responsive Breakpoints for Grid Content */
-        @media (max-width: 992px) {
-            .grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .stats-grid {
-                flex-direction: column;
-                gap: 2rem;
-                padding: 1.5rem;
-            }
-            .stat-item:not(:last-child)::after {
-                display: none;
-            }
-            .grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -863,19 +898,19 @@
             </div>
         </section>
 
-        <!-- Quick Proof Stats Grid -->
+        <!-- Quick Proof Stats Grid (Keeps single row format on mobile layout now) -->
         <section class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">12X</div>
-                <div class="stat-label">Max ROAS Achieved</div>
+                <div class="stat-label">Max ROAS</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">€60k+</div>
-                <div class="stat-label">Revenue in 30 Days</div>
+                <div class="stat-label">30-Day Rev</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">$6</div>
-                <div class="stat-label">B2B Cost Per Lead</div>
+                <div class="stat-label">B2B CPL</div>
             </div>
         </section>
 
@@ -884,7 +919,6 @@
             <div class="ticker-title">Brands I've Scaled & Worked With</div>
             <div class="ticker-wrapper">
                 <div class="ticker-track">
-                    <!-- Group 1 -->
                     <div class="ticker-item">Decor Ornament</div>
                     <div class="ticker-item">Alphagon Digitals</div>
                     <div class="ticker-item">Scentorina</div>
@@ -892,8 +926,7 @@
                     <div class="ticker-item">Ralph Lauren</div>
                     <div class="ticker-item">Cougar</div>
                     <div class="ticker-item">Fitted</div>
-                    
-                    <!-- Group 2 -->
+                    <!-- Duplicate Group -->
                     <div class="ticker-item">Decor Ornament</div>
                     <div class="ticker-item">Alphagon Digitals</div>
                     <div class="ticker-item">Scentorina</div>
@@ -905,12 +938,11 @@
             </div>
         </section>
 
-        <!-- Case Studies Grid Section (3 Columns Layout) -->
+        <!-- Case Studies Grid Section -->
         <section class="case-studies-section" id="case-studies">
             <h2>Our Expertise & Results</h2>
             <div class="grid">
                 
-                <!-- Card 1: Performance Marketing Results -->
                 <a href="meta-ads-case.html" class="case-card">
                     <div>
                         <div class="case-meta">Performance Marketing</div>
@@ -922,7 +954,6 @@
                     </div>
                 </a>
 
-                <!-- Card 2: SEO Results -->
                 <a href="seo-case.html" class="case-card">
                     <div>
                         <div class="case-meta">Search Engine Optimization</div>
@@ -934,7 +965,6 @@
                     </div>
                 </a>
 
-                <!-- Card 3: Social Media Management -->
                 <a href="smm-case.html" class="case-card">
                     <div>
                         <div class="case-meta">Social Media Management</div>
@@ -949,13 +979,13 @@
             </div>
         </section>
 
-        <!-- ADDED SERVICES SECTION (Directly below portfolio grid & above testimonials) -->
+        <!-- SERVICES SECTION (Mobile Responsive Touch Swipe Carousel Layout) -->
         <section class="services-section" id="services">
             <span class="section-tagline">OUR SERVICES</span>
             <h2>What Solutions We Provide</h2>
             
             <div class="services-grid">
-                <!-- Service 1: Paid Ads / Performance Marketing -->
+                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-rectangle-ad"></i>
@@ -965,7 +995,7 @@
                     <a href="services/paid-ads.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 2: SEO Optimization -->
+                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-magnifying-glass-chart"></i>
@@ -975,7 +1005,7 @@
                     <a href="services/seo.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 3: Social Media Management -->
+                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-share-nodes"></i>
@@ -985,7 +1015,7 @@
                     <a href="services/smm.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 4: High-Retention Video Editing -->
+                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-video"></i>
@@ -995,7 +1025,7 @@
                     <a href="services/video-editing.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 5: Direct-Response Copywriting -->
+                <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-pen-nib"></i>
@@ -1007,7 +1037,7 @@
             </div>
         </section>
 
-        <!-- Testimonials Carousel Section -->
+        <!-- Testimonials Section (Mobile Responsive Carousel Layout) -->
         <section class="testimonials-section" id="testimonials">
             <div class="sub-title">What Clients Say</div>
             <h2>Testimonials</h2>
@@ -1015,52 +1045,6 @@
             <div class="testimonial-carousel-window">
                 <div class="testimonial-track">
                     
-                    <!-- GROUP 1 -->
-                    <div class="testimonial-card">
-                        <div>
-                            <div class="quote-icon">"</div>
-                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.</p>
-                        </div>
-                        <div class="client-info">
-                            <h4>Marcus Vance</h4>
-                            <p>E-commerce Director, Scentorina</p>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div>
-                            <div class="quote-icon">"</div>
-                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.</p>
-                        </div>
-                        <div class="client-info">
-                            <h4>Sarah Jenkins</h4>
-                            <p>Operations Lead, Software Market Hub</p>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div>
-                            <div class="quote-icon">"</div>
-                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.</p>
-                        </div>
-                        <div class="client-info">
-                            <h4>Aman Malik</h4>
-                            <p>Founder, Decor Ornament</p>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div>
-                            <div class="quote-icon">"</div>
-                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.</p>
-                        </div>
-                        <div class="client-info">
-                            <h4>Elena Rostova</h4>
-                            <p>Head of Growth, Apex B2B Sol</p>
-                        </div>
-                    </div>
-
-                    <!-- GROUP 2 (Duplicate for Continuous Loop) -->
                     <div class="testimonial-card">
                         <div>
                             <div class="quote-icon">"</div>
@@ -1110,7 +1094,7 @@
         </section>
     </main>
 
-    <!-- PRE-FOOTER CTA BANNER -->
+    <!-- Pre-Footer CTA -->
     <section class="pre-footer-cta">
         <div class="pre-footer-container">
             <h2>Want More Customers, Clients And Sales Than You Could Possibly Handle?</h2>
@@ -1118,17 +1102,15 @@
         </div>
     </section>
 
-    <!-- BRAND FOOTER -->
+    <!-- FOOTER SECTION (Clean parallel grid links on mobile) -->
     <footer class="site-footer" id="contact">
         <div class="footer-container">
             
-            <!-- Column 1: Brand & Copyright Details -->
             <div class="footer-brand">
                 <a href="#top" class="footer-logo">FAKHAR <span>HAYAT</span></a>
                 <p class="copyright-text">© 2026 Fakhar Hayat.<br>All rights reserved.</p>
             </div>
 
-            <!-- Column 2: Resources -->
             <div class="footer-column">
                 <h3>Resources</h3>
                 <ul class="footer-links">
@@ -1138,7 +1120,6 @@
                 </ul>
             </div>
 
-            <!-- Column 3: Company / Professional Info -->
             <div class="footer-column">
                 <h3>Company</h3>
                 <ul class="footer-links">
@@ -1148,7 +1129,6 @@
                 </ul>
             </div>
 
-            <!-- Column 4: Media & Growth Projects -->
             <div class="footer-column">
                 <h3>Media</h3>
                 <ul class="footer-links">
@@ -1158,7 +1138,6 @@
                 </ul>
             </div>
 
-            <!-- Column 5: Social Block Systems & Main CTA Pitch -->
             <div class="footer-cta">
                 <h3>Stay <span>Connected</span> With Me</h3>
                 <div class="footer-social-blocks">
@@ -1182,7 +1161,7 @@
 
         </div>
 
-        <!-- Sticky Floating Back to Top Control Bubble -->
+        <!-- Floating Back to Top Bubble -->
         <a href="#top" class="scroll-top-utility" title="Scroll To Top">
             <i class="fa-solid fa-chevron-up"></i>
         </a>
