@@ -3,431 +3,1758 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fakhar | Digital Marketer & Media Buyer Portfolio</title>
-    <!-- Google Fonts & FontAwesome for Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Fakhar Hayat | Performance Marketing Specialist & Freelancer</title>
+    <meta name="description" content="I am Fakhar Hayat, an individual Performance Marketing Specialist. I help eCommerce brands and service businesses scale revenue with Meta Ads, Google Ads, SEO, and CRO.">
+    <meta name="author" content="Fakhar Hayat">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fakharhayat786.github.io/">
+    <meta property="og:title" content="Fakhar Hayat | Performance Marketing Specialist">
+    <meta property="og:description" content="Data-driven marketing to increase your revenue. Specialized in Meta Ads, Google Ads, and SEO.">
+    <meta property="og:image" content="https://fakharhayat786.github.io/assets/og-image.jpg">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Fakhar Hayat | Performance Marketing Specialist">
+    <meta property="twitter:description" content="Data-driven marketing to increase your revenue. Specialized in Meta Ads, Google Ads, and SEO.">
+
+    <!-- JSON-LD Freelancer Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Fakhar Hayat Portfolio",
+      "image": "https://fakharhayat786.github.io/assets/og-image.jpg",
+      "description": "Performance Marketing Specialist helping eCommerce brands and service businesses scale revenue.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lahore",
+        "addressRegion": "Punjab",
+        "addressCountry": "Pakistan"
+      },
+      "priceRange": "$$$",
+      "knowsAbout": ["Meta Ads", "Google Ads", "SEO", "Conversion Rate Optimization", "Digital Marketing"]
+    }
+    </script>
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Swiper.js CSS Assets for Carousel Implementation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
+        /* --------------------------------------------------------------------------
+           1. MODERN RESET & GLOBAL STYLES (SaaS Premium Aesthetic)
+           -------------------------------------------------------------------------- */
         :root {
-            --bg-dark: #070b19;
-            --card-bg: #0f172a;
-            --primary-blue: #2563eb;
-            --accent-green: #10b981;
-            --accent-orange: #f97316;
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
+            --bg-deep: #030712;         
+            --bg-card: #0b1329;         
+            --border-subtle: #1f2937;    
+            --border-hover: #374151;     
+            --accent-primary: #2563eb;   
+            --accent-success: #10b981;   
+            --action-orange: #ea580c;    
+            --text-pure: #ffffff;        
+            --text-muted: #9ca3af;       
+            --glass-bg: rgba(11, 19, 41, 0.7);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-deep);
+            color: var(--text-pure);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.5;
+            width: 100%;
             overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header Styling */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.05em;
-        }
-
-        .logo span {
-            color: var(--primary-blue);
-        }
-
-        .menu-btn {
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            cursor: pointer;
-        }
-
-        /* Container & Section Base */
         .container {
-            padding: 3rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
         .section-tag {
-            color: var(--primary-blue);
             font-size: 0.75rem;
-            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-            display: block;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: inline-block;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.25rem;
             font-weight: 800;
-            margin-bottom: 2rem;
+            letter-spacing: -0.025em;
+            margin-bottom: 3rem;
         }
 
         .section-title span {
-            color: var(--primary-blue);
+            color: var(--accent-primary);
         }
 
-        /* STYLING FIX: 2x2 Grid Layout for Mobile, switches to 4x1 on Desktop */
-        .grid-2x2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
-        /* Card Elements */
-        .stat-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 1.5rem 0.75rem;
-            text-align: center;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --------------------------------------------------------------------------
+           2. HEADER & STICKY NAVIGATION
+           -------------------------------------------------------------------------- */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-wrapper {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 140px;
+            height: 70px;
         }
 
-        .stat-number {
-            font-size: 1.85rem;
+        .logo {
+            font-size: 1.25rem;
             font-weight: 800;
-            color: var(--accent-green);
-            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: var(--text-pure);
+            text-decoration: none;
         }
 
-        .stat-label {
-            font-size: 0.75rem;
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
             color: var(--text-muted);
-            font-weight: 600;
-            line-height: 1.3;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
         }
 
-        /* Business Feature Card Layout */
-        .feature-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .nav-link:hover {
+            color: var(--text-pure);
+        }
+
+        .nav-cta {
+            background-color: var(--accent-primary);
+            color: var(--text-pure);
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-cta:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-pure);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------
+           3. HERO SECTION (SaaS Layout Framework)
+           -------------------------------------------------------------------------- */
+        .hero-section {
+            padding: 6rem 0;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-badge {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to bottom right, #fff 60%, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 620px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-main {
+            background-color: var(--accent-primary);
+            color: var(--text-pure);
+        }
+
+        .btn-main:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .dashboard-placeholder {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            border: 1px solid var(--border-subtle);
             border-radius: 12px;
-            padding: 1.25rem 0.85rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            min-height: 180px;
+            justify-content: space-between;
+            padding: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        .feature-icon {
-            color: var(--primary-blue);
-            font-size: 1.3rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .feature-title {
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .feature-desc {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* STYLING FIX: Automatic Testimonial Carousel Slider CSS */
-        .carousel-container {
-            position: relative;
-            max-width: 600px;
-            margin: 0 auto;
-            overflow: hidden;
-            padding-bottom: 2.5rem;
-        }
-
-        .carousel-track {
+        .db-header {
             display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 0 5px;
-        }
-
-        .review-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-        }
-
-        .stars {
-            color: #fbbf24;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .quote {
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            color: #e2e8f0;
-            line-height: 1.5;
-        }
-
-        .client-profile {
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.75rem;
         }
 
-        .avatar-placeholder {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #1e293b;
+        .db-dots {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            gap: 5px;
         }
 
-        .client-info h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        .client-info p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* Slider Navigation Dots */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .dot {
+        .db-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: #334155;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .dot.active {
-            background-color: var(--primary-blue);
+        .db-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
         }
 
-        /* CTA & Footer Contact Styles */
-        .cta-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2.5rem 1.25rem;
+        .db-graph {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            padding-top: 1rem;
+        }
+
+        .db-bar {
+            flex-grow: 1;
+            background: linear-gradient(to top, var(--accent-primary), #60a5fa);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        /* --------------------------------------------------------------------------
+           4. ABOUT ME SECTION (Personal Credibility)
+           -------------------------------------------------------------------------- */
+        .about-section {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            height: 420px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        .about-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .mini-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mini-stat-card {
+            background: rgba(255,255,255,0.01);
+            border: 1px solid var(--border-subtle);
+            padding: 1.25rem;
+            border-radius: 10px;
+        }
+
+        .mini-stat-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .mini-stat-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* --------------------------------------------------------------------------
+           5. TRUSTED CLIENT LOOPS
+           -------------------------------------------------------------------------- */
+        .trust-section {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(255, 255, 255, 0.01);
             text-align: center;
         }
 
-        .cta-card h2 {
-            font-size: 1.75rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+        .trust-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            font-weight: 600;
         }
 
-        .cta-card p {
+        .logo-marquee {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+
+        .logo-item {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: -0.5px;
+            opacity: 0.6;
+            transition: var(--transition-smooth);
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+            color: var(--text-pure);
+        }
+
+        /* --------------------------------------------------------------------------
+           6. MY RESULTS SHOWCASE (Responsive Row Layout Fix)
+           -------------------------------------------------------------------------- */
+        .results-section {
+            padding: 6rem 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .metric-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+
+        .metric-big {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-success);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.03em;
+        }
+
+        .metric-context {
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 2rem;
+            font-weight: 500;
         }
 
-        /* Embedded Dynamic Links Layout Grid */
-        .contact-grid {
+        /* --------------------------------------------------------------------------
+           7. MY SERVICES SECTION (High-CRO Conversion Cards)
+           -------------------------------------------------------------------------- */
+        .services-section {
+            padding: 6rem 0;
+            background: rgba(255,255,255,0.01);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            padding: 0.85rem 0.5rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            border-color: rgba(37, 99, 235, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(37, 99, 235, 0.06);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--accent-primary);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.3px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .service-list li {
+            font-size: 0.85rem;
+            color: var(--text-pure);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
             gap: 0.5rem;
-            transition: background-color 0.2s;
         }
 
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.03);
+        .service-list li i {
+            color: var(--accent-success);
+            font-size: 0.8rem;
         }
 
-        .btn-secondary.fb-btn {
-            grid-column: span 2;
-            width: 50%;
+        .service-btn {
+            text-align: center;
+            padding: 0.65rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-btn {
+            border-color: var(--accent-primary);
+            background-color: var(--accent-primary);
+        }
+
+        /* --------------------------------------------------------------------------
+           8. WHY CHOOSE ME SECTION (Responsive Row Layout Fix)
+           -------------------------------------------------------------------------- */
+        .why-section {
+            padding: 6rem 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .why-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .why-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .why-card i {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .why-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* --------------------------------------------------------------------------
+           9. MY CASE STUDIES SECTION (SaaS Slider Engine Architecture)
+           -------------------------------------------------------------------------- */
+        .case-section {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(255,255,255,0.01);
+            overflow: hidden; 
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+            height: 100%;
+            width: 100%;
+        }
+
+        .case-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .case-thumb-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .case-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-body h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.3px;
+        }
+
+        .case-block {
+            margin-bottom: 1rem;
+        }
+
+        .case-block strong {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .case-block p {
+            font-size: 0.9rem;
+            color: var(--text-pure);
+            margin: 0;
+        }
+
+        .case-result-badge {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--accent-success);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 1rem 0 1.5rem 0;
+            align-self: flex-start;
+        }
+
+        .case-btn {
+            margin-top: auto;
+            text-align: center;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .case-card:hover .case-btn {
+            background: var(--text-pure);
+            color: var(--bg-deep);
+            border-color: var(--text-pure);
+        }
+
+        .swiper-pagination {
+            position: relative !important;
+            margin-top: 2rem;
+        }
+        .swiper-pagination-bullet {
+            background: var(--text-muted) !important;
+            opacity: 0.4;
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--accent-primary) !important;
+            opacity: 1 !important;
+            width: 18px !important;
+            border-radius: 5px !important;
+            transition: var(--transition-smooth);
+        }
+
+        /* --------------------------------------------------------------------------
+           10. MARKETING TOOLS ENGINE
+           -------------------------------------------------------------------------- */
+        .tools-section {
+            padding: 6rem 0;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            padding: 1.25rem;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tool-card:hover {
+            border-color: var(--border-hover);
+            color: var(--text-pure);
+            transform: translateY(-2px);
+        }
+
+        .tool-card i {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        /* --------------------------------------------------------------------------
+           11. STRATEGIC WORK PROCESS TIMELINE
+           -------------------------------------------------------------------------- */
+        .process-section {
+            padding: 6rem 0;
+            background: rgba(255,255,255,0.01);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .process-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background: var(--border-subtle);
+            z-index: 1;
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 18%;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--accent-primary);
+            margin: 0 auto 1.25rem auto;
+            transition: var(--transition-smooth);
+        }
+
+        .process-step:hover .step-number {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .process-step h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* --------------------------------------------------------------------------
+           12. TESTIMONIAL CARDS (Updated Swiper Styles)
+           -------------------------------------------------------------------------- */
+        .testimonials-section {
+            padding: 6rem 0;
+            overflow: hidden;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 2.25rem;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .stars-row {
+            color: #fbbf24;
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--text-pure);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .client-profile-block {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .client-avatar-placeholder {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .client-meta h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .client-meta p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 0;
+            font-style: normal;
+        }
+
+        /* --------------------------------------------------------------------------
+           13. ACCORDION FAQ ENGINE
+           -------------------------------------------------------------------------- */
+        .faq-section {
+            padding: 6rem 0;
+            background: rgba(255,255,255,0.01);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .faq-wrapper {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .btn-primary {
-            background-color: var(--accent-orange);
-            color: white;
-            padding: 1rem;
-            border-radius: 10px;
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            color: var(--text-pure);
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-trigger i {
+            transition: var(--transition-smooth);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-content p {
+            padding: 1.25rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .faq-item.active .faq-trigger i {
+            transform: rotate(180deg);
+            color: var(--accent-primary);
+        }
+        .faq-item.active .faq-content {
+            max-height: 200px;
+        }
+
+        /* --------------------------------------------------------------------------
+           14. HIGH-CONVERSION DIRECT CONTACT BLOCK
+           -------------------------------------------------------------------------- */
+        .contact-section {
+            padding: 7rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0b1329 0%, #030712 100%);
+            border: 1px solid var(--border-subtle);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.8);
+        }
+
+        .contact-box h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-channels {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .channel-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-deep);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .channel-btn:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .channel-btn i {
+            font-size: 1.05rem;
+        }
+
+        .channel-btn.whatsapp-color i { color: #25d366; }
+        .channel-btn.linkedin-color i { color: #0a66c2; }
+        .channel-btn.facebook-color i { color: #1877f2; }
+
+        .big-cta-action {
+            background-color: var(--action-orange);
+            color: var(--text-pure);
+            padding: 1rem 3rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
             font-weight: 700;
-            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+        }
+
+        .big-cta-action:hover {
+            background-color: #c2410c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(234, 88, 12, 0.4);
+        }
+
+        /* --------------------------------------------------------------------------
+           15. SIMPLIFIED SITE FOOTER Setup
+           -------------------------------------------------------------------------- */
+        footer {
+            background-color: #020613;
+            border-top: 1px solid var(--border-subtle);
+            padding: 4rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .footer-brand .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-pure);
             text-decoration: none;
             display: block;
-            margin-top: 1rem;
-            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
-            transition: opacity 0.2s;
+            margin-bottom: 1rem;
         }
 
-        .btn-primary:hover {
-            opacity: 0.9;
+        .footer-brand .footer-logo span {
+            color: var(--accent-primary);
         }
 
-        /* Desktop Media Queries */
-        @media (min-width: 768px) {
-            .grid-2x2 {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.5rem;
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+            color: var(--text-pure);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-pure);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icon:hover {
+            color: var(--text-pure);
+            border-color: var(--border-hover);
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* --------------------------------------------------------------------------
+           16. HIGHLY BREAKPOINT RESPONSIVE GRID ADAPTATIONS
+           -------------------------------------------------------------------------- */
+        @media (max-width: 1024px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                padding: 4rem 0;
             }
-            .feature-card, .stat-card {
-                padding: 2rem 1.5rem;
-                min-height: auto;
+            .hero-content h1 {
+                font-size: 3rem;
             }
-            .contact-grid {
-                display: flex;
-                flex-wrap: wrap;
+            .hero-section p {
+                margin: 0 auto 2.5rem auto;
+            }
+            .hero-ctas {
                 justify-content: center;
             }
-            .btn-secondary {
-                padding: 0.75rem 1.5rem;
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
             }
-            .btn-secondary.fb-btn {
-                grid-column: auto;
-                width: auto;
+            .profile-wrapper {
+                height: 320px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-timeline {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .process-timeline::before {
+                display: none;
+            }
+            .process-step {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                gap: 1.5rem;
+            }
+            .step-number {
                 margin: 0;
+                flex-shrink: 0;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-deep);
+                border-top: 1px solid var(--border-subtle);
+                flex-direction: column;
+                padding: 3rem 1.5rem;
+                gap: 2rem;
+                align-items: flex-start;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .services-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
+            }
+            .contact-box {
+                padding: 2.5rem 1.5rem;
+            }
+            .contact-box h2 {
+                font-size: 1.85rem;
+            }
+
+            /* --------------------------------------------------------------------------
+               UPDATED RESPONSIVE RULES FOR ROW BLOCKS
+               -------------------------------------------------------------------------- */
+            /* FIX 1: Force Results Grid into 2x2 rows instead of 1 vertical column */
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem !important;
+            }
+            .metric-card {
+                padding: 1.5rem 0.75rem !important;
+            }
+            .metric-big {
+                font-size: 2rem !important;
+            }
+            .metric-context {
+                font-size: 0.75rem !important;
+            }
+
+            /* FIX 2: Force "Why Work With Me" Grid into 2x2 rows instead of 1 vertical column */
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 0.75rem !important;
+            }
+            .why-card {
+                padding: 1.25rem 0.85rem !important;
+            }
+            .why-card i {
+                font-size: 1.25rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .why-card h3 {
+                font-size: 0.95rem !important;
+            }
+            .why-card p {
+                font-size: 0.75rem !important;
+            }
+
+            .tools-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important; 
+                gap: 10px !important;
+                padding: 5px;
+            }
+            .tool-card {
+                padding: 12px 6px !important;
+                gap: 6px !important;
+            }
+            .tool-card i {
+                font-size: 1.25rem !important;
+            }
+            .tool-card text, .tools-grid {
+                font-size: 0.7rem !important; 
+            }
+
+            .case-grid {
+                display: flex !important; 
+            }
+            .swiper-slide {
+                height: auto !important; 
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Block -->
+    <!-- STICKY SITE NAVIGATION MENU -->
     <header>
-        <div class="logo">FAKHAR<span>.</span></div>
-        <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+        <div class="container nav-wrapper">
+            <a href="#top" class="logo">FAKHAR<span>.</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#results" class="nav-link">My Results</a></li>
+                <li><a href="#services" class="nav-link">My Services</a></li>
+                <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Proof of Performance (Results Section) -->
-    <section class="container">
+    <!-- CORE SITE HERO BLOCK -->
+    <section class="container hero-section fade-in-up" id="top">
+        <div class="hero-content">
+            <span class="hero-badge">PERFORMANCE MARKETING SPECIALIST</span>
+            <h1>Helping Businesses Scale Profitably Through Performance Marketing</h1>
+            <p>I am Fakhar Hayat, an individual Performance Marketing Specialist helping eCommerce brands and service businesses increase revenue with Meta Ads, Google Ads, SEO, and data-driven marketing strategies.</p>
+            <div class="hero-ctas">
+                <a href="#case-studies" class="btn btn-main">View Case Studies <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-outline">Hire Me</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="dashboard-placeholder" aria-hidden="true">
+                <div class="db-header">
+                    <div class="db-dots">
+                        <div class="db-dot"></div>
+                        <div class="db-dot"></div>
+                        <div class="db-dot"></div>
+                    </div>
+                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:600;">LIVE CAMPAIGN DATA</div>
+                </div>
+                <div class="db-body">
+                    <div style="font-size:1.75rem; font-weight:800; color:var(--text-pure);">$14,820.50</div>
+                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent-success); font-weight:700;"><i class="fa-solid fa-caret-up"></i> +41.2% Revenue Multiplier</div>
+                    <div class="db-graph">
+                        <div class="db-bar" style="height: 40%;"></div>
+                        <div class="db-bar" style="height: 55%;"></div>
+                        <div class="db-bar" style="height: 45%;"></div>
+                        <div class="db-bar" style="height: 75%;"></div>
+                        <div class="db-bar" style="height: 95%;"></div>
+                        <div class="db-bar" style="height: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDIBILITY ABOUT ME PANEL -->
+    <section class="container about-section" id="about">
+        <div class="about-grid">
+            <div class="profile-wrapper">
+                <img src="assets/profile.jpg" alt="Fakhar Hayat - Performance Marketing Specialist" class="profile-image">
+            </div>
+            <div class="about-content">
+                <span class="section-tag">About Me</span>
+                <h3>High-ROI Paid Advertising Tailored For Growth</h3>
+                <p>I am an independent digital marketer focused strictly on numbers that affect your bottom line. I do not run a generic agency; I work directly on your brand strategy to make sure every dollar of managed ad spend produces a measurable return.</p>
+                <p>My methodology revolves around clean system tracking, granular creative testing, and aggressive target scaling designed to pull high-intent customers into your funnels.</p>
+                
+                <div class="mini-stats-grid">
+                    <div class="mini-stats-grid">
+                    <div class="mini-stat-card">
+                        <h4>3+ Years</h4>
+                        <p>Industry Experience</p>
+                    </div>
+                    <div class="mini-stat-card">
+                        <h4>100+</h4>
+                        <p>Campaigns Optimized</p>
+                    </div>
+                    <div class="mini-stat-card">
+                        <h4>Global</h4>
+                        <p>Client Reach</p>
+                    </div>
+                    <div class="mini-stat-card">
+                        <h4>Meta</h4>
+                        <p>Certified Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL COMPANIES VERIFIED LOGO BLOCK -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-title">Brands I Have Worked With</div>
+            <div class="logo-marquee">
+                <div class="logo-item">Decor Ornament</div>
+                <div class="logo-item">Stack Eraa</div>
+                <div class="logo-item">Professional Edge</div>
+                <div class="logo-item">Al Meeqat Travels</div>
+                <div class="logo-item">MEP Range</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VERIFIED PERFORMANCE METRICS PANEL (Row Fixed For Mobile) -->
+    <section class="container results-section" id="results">
         <span class="section-tag">Proof of Performance</span>
         <h2 class="section-title">My <span>Results</span></h2>
-        
-        <!-- FIXED Grid: Forces exactly 2 columns per line on mobile layouts -->
-        <div class="grid-2x2">
-            <div class="stat-card">
-                <div class="stat-number">12X</div>
-                <div class="stat-label">Max ROAS Across Active Funnels</div>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-big">12X</div>
+                <div class="metric-context">Max ROAS Across Active Funnels</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">$80K+</div>
-                <div class="stat-label">Managed Digital Ad Spend</div>
+            <div class="metric-card">
+                <div class="metric-big">$80K+</div>
+                <div class="metric-context">Managed Digital Ad Spend</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Ad Campaigns Designed & Optimized</div>
+            <div class="metric-card">
+                <div class="metric-big">100+</div>
+                <div class="metric-context">Ad Campaigns Designed & Optimized</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Years of Verified Marketing Experience</div>
+            <div class="metric-card">
+                <div class="metric-big">3+</div>
+                <div class="metric-context">Years of Verified Marketing Experience</div>
             </div>
         </div>
     </section>
 
-    <!-- Value Proposition Section -->
-    <section class="container">
+    <!-- ROBUST CONVERSION CARD SOLUTIONS DISPLAY -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <span class="section-tag">What I Excel At</span>
+            <h2 class="section-title">My <span>Services</span></h2>
+            <div class="services-grid">
+                
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-brands fa-meta"></i></div>
+                    <h3>Meta Ads Management</h3>
+                    <p>End-to-end management built to scale your customer base across Facebook and Instagram channels.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Complex Campaign Setup</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Structural Scaling Blueprints</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Intent-Based Retargeting</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pixel & Conversion API Setup</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Learn More</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>SEO Optimization</h3>
+                    <p>Increasing organic traffic and capture high-intent users actively searching for your service.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Advanced Keyword Technical Audits</li>
+                        <li><i class="fa-solid fa-circle-check"></i> In-depth On-Page Optimization</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Organic Lead Generation Frameworks</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Long-term Authority Strategy</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Learn More</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Building real organic engagement and brand visibility over core consumer channels.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> High-Retention Content Planning</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Structured Growth Ecosystems</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Creative Audience Scaling</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Multi-channel Profile Optimization</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Learn More</a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-brands fa-google"></i></div>
+                    <h3>Google Ads</h3>
+                    <p>Capture bottom-of-the-funnel buyers at the precise millisecond they are searching for a solution.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> High-ROI Search Campaigns</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Performance Max (PMax) Management</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Strategic Negative Keyword Sifting</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct Competitor Conquesting</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Learn More</a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-brands fa-shopify"></i></div>
+                    <h3>Shopify Marketing</h3>
+                    <p>Turn web traffic into checkout transactions using specific e-commerce optimizations.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Abandoned Checkout Funnel Builds</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Average Order Value (AOV) Boosts</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Landing Page Optimization</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Customer Lifecycle Retention</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Learn More</a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Data Analytics & Tracking</h3>
+                    <p>Clean server data integration ensuring every transaction maps accurately to its acquisition source.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Google Analytics 4 (GA4) Architecture</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Custom Google Tag Manager Triggers</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Server-Side Cookie Configurations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Interactive Marketing Dashboards</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Learn More</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUE CARDS SECTION (Row Fixed For Mobile) -->
+    <section class="container why-section">
         <span class="section-tag">Value Proposition</span>
-        <h2 class="section-title">Why Businesses Work <span>With Me</span></h2>
-        
-        <!-- FIXED Grid: Forces exactly 2 columns per line on mobile layouts -->
-        <div class="grid-2x2">
-            <div class="feature-card">
-                <i class="fa-solid fa-chart-line feature-icon"></i>
-                <h3 class="feature-title">Data-Driven Decisions</h3>
-                <p class="feature-desc">I isolate trends inside raw database arrays instead of taking wild guesses with your capital budget.</p>
+        <h2 class="section-title">Why Businesses Work With <span>Me</span></h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Data-Driven Decisions</h3>
+                <p>I isolate trends inside raw database arrays instead of taking wild guesses with your capital budget.</p>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-eye feature-icon"></i>
-                <h3 class="feature-title">Transparent Reporting</h3>
-                <p class="feature-desc">You receive straightforward custom tracking breakdowns displaying precise acquisition cost data metrics.</p>
+            <div class="why-card">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Transparent Reporting</h3>
+                <p>You receive straightforward custom tracking breakdowns displaying precise acquisition cost data metrics.</p>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-bolt feature-icon"></i>
-                <h3 class="feature-title">Fast Communication</h3>
-                <p class="feature-desc">Direct communication and swift responses ensure optimization occurs without delays.</p>
+            <div class="why-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Fast Communication</h3>
+                <p>Direct communication and swift responses ensure quick adaptations to market movements.</p>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-bullseye feature-icon"></i>
-                <h3 class="feature-title">ROAS Dedicated</h3>
-                <p class="feature-desc">Every optimization phase is geared explicitly toward compounding net return-on-ad-spend layers.</p>
+            <div class="why-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>ROI Focused</h3>
+                <p>Every single ad variant built is calculated specifically to lower cost per purchase and increase margins.</p>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-seedling"></i>
+                <h3>Long-Term Growth</h3>
+                <p>I map structured sustainable pipelines that steadily mature brand value over fiscal quarters.</p>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof Section (Automatic Slide Carousel) -->
-    <section class="container">
+    <!-- REDESIGNED STRUCTURAL CASE STUDIES SECTION -->
+    <section class="case-section" id="case-studies">
+        <div class="container">
+            <span class="section-tag">Real-World Case Breakdowns</span>
+            <h2 class="section-title">My <span>Case Studies</span></h2>
+            
+            <div class="swiper case-studies-swiper">
+                <div class="swiper-wrapper case-grid">
+                    
+                    <!-- Case Study 1 -->
+                    <div class="swiper-slide">
+                        <div class="case-card">
+                            <div class="case-thumb-placeholder" aria-hidden="true">
+                                <i class="fa-solid fa-chart-column" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
+                                <span>[ E-Commerce Scale Case View ]</span>
+                            </div>
+                            <div class="case-body">
+                                <h3>Scaling Direct-To-Consumer Store to Consistent Sales Volume</h3>
+                                <div class="case-block">
+                                    <strong>Challenge</strong>
+                                    <p>Stagnating conversion return thresholds and volatile ad account tracking fluctuations across multi-variant audiences.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Solution</strong>
+                                    <p>Engineered comprehensive user-generated creative testing loops along with a complete clean rewrite of the data server API tracking engine.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Results</strong>
+                                    <p>Stabilized customer acquisition trends over a brief lifecycle span, driving scalable numbers efficiently.</p>
+                                </div>
+                                <span class="case-result-badge">Result: Up to 12X Peak ROAS</span>
+                                <a href="#" class="case-btn">Read Full Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="swiper-slide">
+                        <div class="case-card">
+                            <div class="case-thumb-placeholder" aria-hidden="true">
+                                <i class="fa-solid fa-arrow-up-right-dots" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
+                                <span>[ B2B Lead Acquisition Case View ]</span>
+                            </div>
+                            <div class="case-body">
+                                <h3>Driving Premium Corporate Accounts for Professional B2B Firm</h3>
+                                <div class="case-block">
+                                    <strong>Challenge</strong>
+                                    <p>Exorbitant digital click rates yielding underqualified profile inquiries that bogged down active sales operators.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Solution</strong>
+                                    <p>Restructured targeted search parameters coupled with high-intent question filters built into landing page flows.</p>
+                                </div>
+                                <div class="case-block">
+                                    <strong>Results</strong>
+                                    <p>Slashed acquisition spend overhead while accelerating actual downstream sales interactions safely.</p>
+                                </div>
+                                <span class="case-result-badge">Result: 200+ Qualified High-Intent Leads</span>
+                                <a href="#" class="case-btn">Read Full Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRATED SYSTEMS & ENGINE TRACK TOOLS -->
+    <section class="container tools-section">
+        <span class="section-tag">My Stack</span>
+        <h2 class="section-title">Tools I Use to Scale <span>Brands</span></h2>
+        <div class="tools-grid">
+            <div class="tool-card"><i class="fa-brands fa-meta"></i> Meta Ads</div>
+            <div class="tool-card"><i class="fa-brands fa-google"></i> Google Ads</div>
+            <div class="tool-card"><i class="fa-solid fa-chart-line"></i> GA4</div>
+            <div class="tool-card"><i class="fa-solid fa-tags"></i> Tag Manager</div>
+            <div class="tool-card"><i class="fa-brands fa-shopify"></i> Shopify</div>
+            <div class="tool-card"><i class="fa-brands fa-wordpress"></i> WordPress</div>
+            <div class="tool-card"><i class="fa-solid fa-palette"></i> Canva</div>
+            <div class="tool-card"><i class="fa-solid fa-video"></i> CapCut</div>
+            <div class="tool-card"><i class="fa-solid fa-magnifying-glass"></i> GSC</div>
+            <div class="tool-card"><i class="fa-solid fa-cubes"></i> Elementor</div>
+        </div>
+    </section>
+
+    <!-- HORIZONTAL WORK PROCESS TIMELINE SECTION -->
+    <section class="process-section">
+        <div class="container">
+            <span class="section-tag">Execution Strategy</span>
+            <h2 class="section-title">How I <span>Work</span></h2>
+            <div class="process-timeline">
+                
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h4>Research</h4>
+                    <p>Deep competitor audit, data sifting, and identifying target audiences.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h4>Strategy</h4>
+                    <p>Drafting complete funnels, building tracking frameworks, and mapping custom copy templates.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h4>Launch</h4>
+                    <p>Deploying structured ad sets and initiating target search bidding matches live.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h4>Optimization</h4>
+                    <p>Pruning weak creative parameters, re-allocating budget elements, and refining conversion paths.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <h4>Scaling</h4>
+                    <p>Aggressively expanding successful audiences to increase volume and maximize revenue.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW TESTIMONIAL CAROUSEL FRAME (Configured to slide automatically) -->
+    <section class="container testimonials-section">
         <span class="section-tag">Social Proof</span>
         <h2 class="section-title">What Clients <span>Say</span></h2>
         
-        <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
+        <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
                 
                 <!-- Slide 1 -->
-                <div class="carousel-slide">
-                    <div class="review-card">
-                        <div class="stars">
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="stars-row">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="quote">"Fakhar dramatically lowered our acquisition costs within weeks. His structured approach to creative testing completely turned our ad accounts around."</p>
-                        <div class="client-profile">
-                            <div class="avatar-placeholder">MO</div>
-                            <div class="client-info">
+                        <p>"Fakhar dramatically lowered our acquisition costs within weeks. His structured approach to creative testing completely turned our ad accounts around."</p>
+                        <div class="client-profile-block">
+                            <div class="client-avatar-placeholder" aria-hidden="true">MO</div>
+                            <div class="client-meta">
                                 <h4>Client Reference</h4>
                                 <p>E-Commerce Founder</p>
                             </div>
@@ -436,15 +1763,15 @@
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="carousel-slide">
-                    <div class="review-card">
-                        <div class="stars">
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="stars-row">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="quote">"The tracking setup alone saved us thousands in lost attribution data. I appreciate how he focuses strictly on direct revenue metrics instead of vanity clicks."</p>
-                        <div class="client-profile">
-                            <div class="avatar-placeholder">B2</div>
-                            <div class="client-info">
+                        <p>"The tracking setup alone saved us thousands in lost attribution data. I appreciate how he focuses strictly on direct revenue metrics instead of vanity vanity clicks."</p>
+                        <div class="client-profile-block">
+                            <div class="client-avatar-placeholder" aria-hidden="true">B2</div>
+                            <div class="client-meta">
                                 <h4>Enterprise Lead</h4>
                                 <p>B2B Operations Director</p>
                             </div>
@@ -452,79 +1779,162 @@
                     </div>
                 </div>
 
-            </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="stars-row">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p>"Professional communication, robust daily dashboard insights, and complete execution control. Highly recommend working with Fakhar to grow your channels."</p>
+                        <div class="client-profile-block">
+                            <div class="client-avatar-placeholder" aria-hidden="true">GS</div>
+                            <div class="client-meta">
+                                <h4>Store Operator</h4>
+                                <p>Shopify Retail Merchant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Slider Indicator Dots -->
-            <div class="carousel-dots" id="carouselDots">
-                <span class="dot active" onclick="goToSlide(0)"></span>
-                <span class="dot" onclick="goToSlide(1)"></span>
             </div>
+            <!-- Slider Dots For Navigation Reference -->
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
-    <!-- Embedded Verification Contact Links Grid -->
-    <section class="container">
-        <div class="cta-card">
+    <!-- HIGH-CRO HIGH-INTENT DIRECT CALL TO ACTION BOX (Links Updated) -->
+    <section class="container contact-section" id="contact">
+        <div class="contact-box">
             <h2>Let's Grow Your Business</h2>
             <p>Get in touch directly to discuss scaling your customer channels and stabilizing acquisition costs.</p>
             
-            <div class="contact-grid">
-                <!-- Configured User Email Link -->
-                <a href="mailto:fkhrhayat786@gmail.com" class="btn-secondary">
-                    <i class="fa-solid fa-envelope"></i> Email Me
-                </a>
-                
-                <!-- Configured User Call Link -->
-                <a href="tel:+923080372554" class="btn-secondary">
-                    <i class="fa-solid fa-phone"></i> Call Direct
-                </a>
-                
-                <!-- Configured User WhatsApp API Endpoint -->
-                <a href="https://wa.me/923080372554" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
-                
-                <a href="#" class="btn-secondary">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                
-                <a href="#" class="btn-secondary fb-btn">
-                    <i class="fa-brands fa-facebook"></i> Facebook
-                </a>
+            <div class="contact-channels">
+                <a href="mailto:fkhrhayat786@gmail.com" class="channel-btn"><i class="fa-solid fa-envelope"></i> Email Me</a>
+                <a href="tel:+923080372554" class="channel-btn"><i class="fa-solid fa-phone"></i> Call Direct</a>
+                <a href="https://wa.me/923080372554" class="channel-btn whatsapp-color" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="channel-btn linkedin-color" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://www.facebook.com/fakhr.awan786" class="channel-btn facebook-color" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
             </div>
 
-            <a href="https://wa.me/923080372554" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Your Strategy Session</a>
+            <a href="https://wa.me/923080372554" class="big-cta-action" target="_blank">Book Your Strategy Session</a>
         </div>
     </section>
 
-    <!-- JavaScript For Autoplay Carousel Transitions -->
+    <!-- MODERN SIMPLIFIED BRAND FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#top" class="footer-logo">FAKHAR<span>HAYAT</span></a>
+                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.</p>
+                <p style="margin-top: 1.5rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#results">My Results</a></li>
+                    <li><a href="#services">My Services</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Meta Paid Campaigns</a></li>
+                    <li><a href="#services">Google Ads Engines</a></li>
+                    <li><a href="#services">Technical SEO Systems</a></li>
+                    <li><a href="#services">Conversion Tracking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect With Me</h4>
+                <div class="footer-socials">
+                    <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/fakhr.awan786" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/fkhr.awan/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTWEIGHT NATIVE UI SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const track = document.getElementById('carouselTrack');
-        const dots = document.querySelectorAll('.dot');
-        let currentIndex = 0;
-        const totalSlides = dots.length;
-        const slideInterval = 4000; // Switch slide every 4000ms (4 Seconds)
+        // Initialize the Case Study Responsive Slider Engine
+        const swiperCase = new Swiper('.case-studies-swiper', {
+            slidesPerView: 1,       
+            spaceBetween: 20,       
+            loop: false,            
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,    
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2, 
+                    spaceBetween: 40,
+                    allowTouchMove: false 
+                }
+            }
+        });
 
-        function updateSlider() {
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
+        // FIX 3: Initialize Automatically Moving Testimonials Swiper Carousel
+        const swiperTestimonials = new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            autoplay: {
+                delay: 3500, // Slides change automatically every 3.5 seconds
+                disableOnInteraction: false, // Continue moving even if user clicks it
+            },
+            pagination: {
+                el: '.testimonials-section .swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    allowTouchMove: false // Grid look on desktop, slides on mobile
+                }
+            }
+        });
+
+        // Responsive Hamburger Mobile Nav Toggle Engine
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
             });
-        }
+        });
 
-        function goToSlide(index) {
-            currentIndex = index;
-            updateSlider();
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlider();
-        }
-
-        // Initialize Carousel Auto loop
-        setInterval(nextSlide, slideInterval);
+        // Interactive Structural Accordion Engine for FAQ triggers
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const parent = trigger.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+                
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
     </script>
-
 </body>
 </html>
