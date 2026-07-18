@@ -112,7 +112,7 @@
         main {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 2rem 1rem 4rem 1rem;
+            padding: 2rem 1rem 0rem 1rem; /* Reduced bottom padding to fix the gap */
         }
 
         /* Hero Section */
@@ -453,9 +453,9 @@
             border-color: var(--accent-color);
         }
 
-        /* Testimonials Section */
+        /* Testimonials Section (Cleaned up margin-bottom to close space gap) */
         .testimonials-section {
-            margin: 6rem 0;
+            margin: 6rem 0 2rem 0; 
             width: 100%;
         }
 
@@ -482,9 +482,15 @@
             border-bottom: 1px solid var(--border-color);
         }
 
+        /* FIX: Added smooth running infinite CSS animation loop */
         .testimonial-track {
             display: flex;
             width: max-content;
+            animation: scrollTestimonials 30s linear infinite;
+        }
+
+        .testimonial-carousel-window:hover .testimonial-track {
+            animation-play-state: paused;
         }
 
         .testimonial-card {
@@ -521,12 +527,18 @@
             color: var(--text-muted);
         }
 
+        /* Keyframes for the running testimonials track */
+        @keyframes scrollTestimonials {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+        }
+
         /* Pre-Footer Banner */
         .pre-footer-cta {
             background-color: var(--prefooter-bg);
             border-top: 1px solid var(--border-color);
             padding: 4rem 1.5rem;
-            margin-top: 4rem;
+            margin-top: 0; /* Removed extra space margin */
         }
 
         .pre-footer-container {
@@ -653,9 +665,7 @@
             border-radius: 10px;
         }
 
-        /* ==========================================================================
-           RESPONSIVE MOBILE BREAKPOINTS & OVERALL VIEWPORT FIT FIXES
-           ========================================================================== */
+        /* Responsive Mobile Breakpoints */
         @media (max-width: 992px) {
             .grid, .services-grid {
                 grid-template-columns: 1fr 1fr;
@@ -669,7 +679,6 @@
         }
 
         @media (max-width: 768px) {
-            /* Fix Screen Fit Layout & Stop Zoom Requirement */
             main {
                 padding-top: 1rem;
             }
@@ -677,7 +686,6 @@
                 font-size: 2.2rem;
             }
 
-            /* FIX: Clean, Organized Stacked Mobile Menu */
             .nav-container {
                 flex-direction: column;
                 gap: 1rem;
@@ -697,7 +705,6 @@
                 max-width: 200px;
             }
 
-            /* Metrics Bar Alignment */
             .stats-grid {
                 flex-direction: row;
                 padding: 1.25rem 0.5rem;
@@ -710,7 +717,6 @@
                 font-size: 0.65rem;
             }
 
-            /* FIX: Case Studies Carousel Setup */
             .grid {
                 display: flex;
                 overflow-x: auto;
@@ -729,7 +735,6 @@
                 min-height: 340px;
             }
 
-            /* Services Responsive Horizontal Swipe Setup */
             .services-grid {
                 display: flex;
                 overflow-x: auto;
@@ -748,7 +753,6 @@
                 padding: 2rem 1.25rem;
             }
 
-            /* FIX: Restored Interactive Testimonials Swipe View */
             .testimonial-carousel-window {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
@@ -760,6 +764,7 @@
             .testimonial-track {
                 display: flex;
                 padding: 0.5rem 0.25rem;
+                animation: none; /* Disables animation on mobile to favor natural touch drag gestures */
             }
             .testimonial-card {
                 width: 290px;
@@ -767,7 +772,6 @@
                 scroll-snap-align: start;
             }
 
-            /* Bottom layout elements wrap adjustments */
             .pre-footer-container {
                 flex-direction: column;
                 text-align: center;
@@ -777,7 +781,6 @@
                 font-size: 1.5rem;
             }
 
-            /* Footer Parallel Columns Positioning Matrix */
             .footer-container {
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 2rem 1rem;
@@ -804,7 +807,7 @@
     </header>
 
     <main>
-        <!-- Hero Section (Removed extra header space) -->
+        <!-- Hero Section -->
         <section class="hero">
             <span class="badge">PROVEN PERFORMANCE MARKETER</span>
             <h1>Turning Ad Budgets Into <span>Scalable Revenue</span></h1>
@@ -843,7 +846,7 @@
                     <div class="ticker-item">Ralph Lauren</div>
                     <div class="ticker-item">Cougar</div>
                     <div class="ticker-item">Fitted</div>
-                    <!-- Duplicate Group -->
+                    <!-- Duplicate Group for infinite scroll effect -->
                     <div class="ticker-item">Decor Ornament</div>
                     <div class="ticker-item">Alphagon Digitals</div>
                     <div class="ticker-item">Scentorina</div>
@@ -855,7 +858,7 @@
             </div>
         </section>
 
-        <!-- Case Studies Grid Section (Now features Carousel on mobile layout) -->
+        <!-- Case Studies Section -->
         <section class="case-studies-section" id="case-studies">
             <h2>Our Expertise & Results</h2>
             <div class="grid">
@@ -896,13 +899,12 @@
             </div>
         </section>
 
-        <!-- SERVICES SECTION (Descriptions shortened to optimize card height) -->
+        <!-- Services Section -->
         <section class="services-section" id="services">
             <span class="section-tagline">OUR SERVICES</span>
             <h2>What Solutions We Provide</h2>
             
             <div class="services-grid">
-                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-rectangle-ad"></i>
@@ -912,7 +914,6 @@
                     <a href="services/paid-ads.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-magnifying-glass-chart"></i>
@@ -922,7 +923,6 @@
                     <a href="services/seo.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-share-nodes"></i>
@@ -932,7 +932,6 @@
                     <a href="services/smm.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-video"></i>
@@ -942,7 +941,6 @@
                     <a href="services/video-editing.html" class="service-action-btn">View Details</a>
                 </div>
 
-                <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-icon-shape">
                         <i class="fa-solid fa-pen-nib"></i>
@@ -954,7 +952,7 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section (Restored Autoplay Animation track with duplication) -->
         <section class="testimonials-section" id="testimonials">
             <div class="sub-title">What Clients Say</div>
             <h2>Testimonials</h2>
@@ -1006,12 +1004,57 @@
                         </div>
                     </div>
 
+                    <!-- Duplicate Loop items for uninterrupted scroll illusion -->
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">Every metric was considered. The ad strategy didn't just look good, it performed.</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Marcus Vance</h4>
+                            <p>E-commerce Director, Scentorina</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">They raised the bar for what we thought our organic visibility could be.</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Sarah Jenkins</h4>
+                            <p>Operations Lead, Software Market Hub</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">The content architecture quietly makes legacy competitors look nervous.</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Aman Malik</h4>
+                            <p>Founder, Decor Ornament</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div>
+                            <div class="quote-icon">"</div>
+                            <p class="testimonial-text">Working together felt less like a basic vendor and more like a growth partner.</p>
+                        </div>
+                        <div class="client-info">
+                            <h4>Elena Rostova</h4>
+                            <p>Head of Growth, Apex B2B Sol</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Pre-Footer CTA -->
+    <!-- Pre-Footer CTA (Tightly connected right below main sections) -->
     <section class="pre-footer-cta">
         <div class="pre-footer-container">
             <h2>Want More Customers, Clients And Sales Than You Could Possibly Handle?</h2>
