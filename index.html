@@ -1109,19 +1109,20 @@
         }
 
         /* --------------------------------------------------------------------------
-           15. SIMPLIFIED SITE FOOTER Setup
+           15. SITE FOOTER Setup (Three Columns + Center Row Setup)
            -------------------------------------------------------------------------- */
         footer {
             background-color: #020613;
             border-top: 1px solid var(--border-subtle);
-            padding: 4rem 0;
+            padding: 4rem 0 2rem;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            grid-template-columns: 1.5fr 1fr 1fr;
             gap: 3rem;
             align-items: start;
+            margin-bottom: 3rem;
         }
 
         .footer-brand .footer-logo {
@@ -1170,8 +1171,23 @@
             color: var(--text-pure);
         }
 
+        .footer-bottom-center {
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 2rem;
+        }
+
+        .footer-bottom-center h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: var(--text-pure);
+        }
+
         .footer-socials {
             display: flex;
+            justify-content: center;
             gap: 0.75rem;
         }
 
@@ -1244,7 +1260,7 @@
                 flex-shrink: 0;
             }
             .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1.5fr 1fr 1fr;
                 gap: 2.5rem;
             }
         }
@@ -1290,7 +1306,7 @@
             /* --------------------------------------------------------------------------
                UPDATED RESPONSIVE RULES FOR ROW BLOCKS
                -------------------------------------------------------------------------- */
-            /* FIX 1: Force Results Grid into 2x2 rows instead of 1 vertical column */
+            /* Force Results Grid into 2x2 rows instead of 1 vertical column */
             .metrics-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 0.75rem !important;
@@ -1305,7 +1321,7 @@
                 font-size: 0.75rem !important;
             }
 
-            /* FIX 2: Force "Why Work With Me" Grid into 2x2 rows instead of 1 vertical column */
+            /* Force "Why Work With Me" Grid into 2x2 rows instead of 1 vertical column */
             .why-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 0.75rem !important;
@@ -1420,7 +1436,6 @@
                 <p>My methodology revolves around clean system tracking, granular creative testing, and aggressive target scaling designed to pull high-intent customers into your funnels.</p>
                 
                 <div class="mini-stats-grid">
-                    <div class="mini-stats-grid">
                     <div class="mini-stat-card">
                         <h4>3+ Years</h4>
                         <p>Industry Experience</p>
@@ -1445,12 +1460,12 @@
     <!-- REAL COMPANIES VERIFIED LOGO BLOCK -->
     <section class="trust-section">
         <div class="container">
-            <div class="trust-title">Brands I Have Worked With</div>
+            <div class="trust-title">Brands I Have Worked With[cite: 4]</div>
             <div class="logo-marquee">
-                <div class="logo-item">Decor Ornament</div>
+                <div class="logo-item">Decor Ornament[cite: 4]</div>
                 <div class="logo-item">Stack Eraa</div>
                 <div class="logo-item">Professional Edge</div>
-                <div class="logo-item">Al Meeqat Travels</div>
+                <div class="logo-item">Al Meeqat Travels[cite: 4]</div>
                 <div class="logo-item">MEP Range</div>
             </div>
         </div>
@@ -1504,7 +1519,7 @@
                 <!-- Card 2 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h3>SEO Optimization</h3>
+                    <h3>SEO Optimization[cite: 4]</h3>
                     <p>Increasing organic traffic and capture high-intent users actively searching for your service.</p>
                     <ul class="service-list">
                         <li><i class="fa-solid fa-circle-check"></i> Advanced Keyword Technical Audits</li>
@@ -1820,39 +1835,41 @@
         </div>
     </section>
 
-    <!-- MODERN SIMPLIFIED BRAND FOOTER -->
+    <!-- MODERN SIMPLIFIED BRAND FOOTER[cite: 4] -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="#top" class="footer-logo">FAKHAR<span>HAYAT</span></a>
-                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.</p>
-                <p style="margin-top: 1.5rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.</p>
+                <a href="#top" class="footer-logo">FAKHAR<span>HAYAT</span>[cite: 4]</a>
+                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.[cite: 4]</p>
+                <p style="margin-top: 1.5rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.[cite: 4]</p>
             </div>
             <div class="footer-col">
-                <h4>Navigation</h4>
+                <h4>Services[cite: 4]</h4>
                 <ul class="footer-links">
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#results">My Results</a></li>
-                    <li><a href="#services">My Services</a></li>
-                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#services">Meta Paid Campaigns[cite: 4]</a></li>
+                    <li><a href="#services">Google Ads Engines[cite: 4]</a></li>
+                    <li><a href="#services">Technical SEO Systems[cite: 4]</a></li>
+                    <li><a href="#services">Conversion Tracking[cite: 4]</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
+                <h4>Navigation[cite: 4]</h4>
                 <ul class="footer-links">
-                    <li><a href="#services">Meta Paid Campaigns</a></li>
-                    <li><a href="#services">Google Ads Engines</a></li>
-                    <li><a href="#services">Technical SEO Systems</a></li>
-                    <li><a href="#services">Conversion Tracking</a></li>
+                    <li><a href="#about">About Me[cite: 4]</a></li>
+                    <li><a href="#results">My Results[cite: 4]</a></li>
+                    <li><a href="#services">My Services[cite: 4]</a></li>
+                    <li><a href="#case-studies">Case Studies[cite: 4]</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect With Me</h4>
-                <div class="footer-socials">
-                    <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://www.facebook.com/fakhr.awan786" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/fkhr.awan/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
+        </div>
+        
+        <!-- Centered Social Icons Block underneath Main Columns -->
+        <div class="container footer-bottom-center">
+            <h4>Connect With Me[cite: 4]</h4>
+            <div class="footer-socials">
+                <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/fakhr.awan786" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/fkhr.awan/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </footer>
@@ -1878,14 +1895,14 @@
             }
         });
 
-        // FIX 3: Initialize Automatically Moving Testimonials Swiper Carousel
+        // Initialize Automatically Moving Testimonials Swiper Carousel
         const swiperTestimonials = new Swiper('.testimonials-swiper', {
             slidesPerView: 1,
             spaceBetween: 24,
             loop: true,
             autoplay: {
-                delay: 3500, // Slides change automatically every 3.5 seconds
-                disableOnInteraction: false, // Continue moving even if user clicks it
+                delay: 3500, 
+                disableOnInteraction: false, 
             },
             pagination: {
                 el: '.testimonials-section .swiper-pagination',
@@ -1897,7 +1914,7 @@
                 },
                 1024: {
                     slidesPerView: 3,
-                    allowTouchMove: false // Grid look on desktop, slides on mobile
+                    allowTouchMove: false 
                 }
             }
         });
