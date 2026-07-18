@@ -421,7 +421,7 @@
             color: var(--accent-primary);
             font-weight: 800;
             margin-bottom: 0.25rem;
-        }
+            }
 
         .mini-stat-card p {
             margin: 0;
@@ -1353,12 +1353,14 @@
             .tool-card i {
                 font-size: 1.25rem !important;
             }
-            .tool-card text, .tools-grid {
+            .tools-grid {
                 font-size: 0.7rem !important; 
             }
 
             .case-grid {
                 display: flex !important; 
+                flex-direction: row !important;
+                align-items: stretch !important;
             }
             .swiper-slide {
                 height: auto !important; 
@@ -1460,12 +1462,12 @@
     <!-- REAL COMPANIES VERIFIED LOGO BLOCK -->
     <section class="trust-section">
         <div class="container">
-            <div class="trust-title">Brands I Have Worked With[cite: 4]</div>
+            <div class="trust-title">Brands I Have Worked With</div>
             <div class="logo-marquee">
-                <div class="logo-item">Decor Ornament[cite: 4]</div>
+                <div class="logo-item">Decor Ornament</div>
                 <div class="logo-item">Stack Eraa</div>
                 <div class="logo-item">Professional Edge</div>
-                <div class="logo-item">Al Meeqat Travels[cite: 4]</div>
+                <div class="logo-item">Al Meeqat Travels</div>
                 <div class="logo-item">MEP Range</div>
             </div>
         </div>
@@ -1519,7 +1521,7 @@
                 <!-- Card 2 -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h3>SEO Optimization[cite: 4]</h3>
+                    <h3>SEO Optimization</h3>
                     <p>Increasing organic traffic and capture high-intent users actively searching for your service.</p>
                     <ul class="service-list">
                         <li><i class="fa-solid fa-circle-check"></i> Advanced Keyword Technical Audits</li>
@@ -1817,7 +1819,39 @@
         </div>
     </section>
 
-    <!-- HIGH-CRO HIGH-INTENT DIRECT CALL TO ACTION BOX (Links Updated) -->
+    <!-- ACCORDION FAQ ENGINE SOLUTIONS PANEL -->
+    <section class="faq-section">
+        <div class="container">
+            <span class="section-tag font-bold">FAQ</span>
+            <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+            <div class="faq-wrapper">
+                
+                <div class="faq-item">
+                    <button class="faq-trigger">What advertising platforms do you specialize in? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-content">
+                        <p>I specialize strictly in performance marketing across Meta Ads (Facebook & Instagram), Google Ads (Search, Performance Max, Shopping), and technical Search Engine Optimization (SEO).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">How do you track accurate ROI for campaigns? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-content">
+                        <p>I implement advanced data configurations like Google Analytics 4 (GA4), custom Tag Manager triggers, and Meta Server-Side Conversion APIs to bypass cookie degradation and map clear revenue back to its correct source.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-trigger">What is your typical onboarding process? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-content">
+                        <p>We kick off with a deep strategy alignment session followed by a thorough competitor audit, tracking network architecture setup, and copy creation before pushing strategic campaigns live.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGH-CRO HIGH-INTENT DIRECT CALL TO ACTION BOX -->
     <section class="container contact-section" id="contact">
         <div class="contact-box">
             <h2>Let's Grow Your Business</h2>
@@ -1835,37 +1869,37 @@
         </div>
     </section>
 
-    <!-- MODERN SIMPLIFIED BRAND FOOTER[cite: 4] -->
+    <!-- MODERN SIMPLIFIED BRAND FOOTER -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="#top" class="footer-logo">FAKHAR<span>HAYAT</span>[cite: 4]</a>
-                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.[cite: 4]</p>
-                <p style="margin-top: 1.5rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.[cite: 4]</p>
+                <a href="#top" class="footer-logo">FAKHAR<span>HAYAT</span></a>
+                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.</p>
+                <p style="margin-top: 1.5rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.</p>
             </div>
             <div class="footer-col">
-                <h4>Services[cite: 4]</h4>
+                <h4>Services</h4>
                 <ul class="footer-links">
-                    <li><a href="#services">Meta Paid Campaigns[cite: 4]</a></li>
-                    <li><a href="#services">Google Ads Engines[cite: 4]</a></li>
-                    <li><a href="#services">Technical SEO Systems[cite: 4]</a></li>
-                    <li><a href="#services">Conversion Tracking[cite: 4]</a></li>
+                    <li><a href="#services">Meta Paid Campaigns</a></li>
+                    <li><a href="#services">Google Ads Engines</a></li>
+                    <li><a href="#services">Technical SEO Systems</a></li>
+                    <li><a href="#services">Conversion Tracking</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Navigation[cite: 4]</h4>
+                <h4>Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="#about">About Me[cite: 4]</a></li>
-                    <li><a href="#results">My Results[cite: 4]</a></li>
-                    <li><a href="#services">My Services[cite: 4]</a></li>
-                    <li><a href="#case-studies">Case Studies[cite: 4]</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#results">My Results</a></li>
+                    <li><a href="#services">My Services</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
                 </ul>
             </div>
         </div>
         
         <!-- Centered Social Icons Block underneath Main Columns -->
         <div class="container footer-bottom-center">
-            <h4>Connect With Me[cite: 4]</h4>
+            <h4>Connect With Me</h4>
             <div class="footer-socials">
                 <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://www.facebook.com/fakhr.awan786" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
