@@ -89,7 +89,7 @@
             color: var(--primary-blue);
         }
 
-        /* FIXED: 2x2 Grid Layout for Mobile & Desktop */
+        /* STYLING FIX: 2x2 Grid Layout for Mobile, switches to 4x1 on Desktop */
         .grid-2x2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -101,41 +101,44 @@
             background-color: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            padding: 1.25rem 0.75rem;
+            padding: 1.5rem 0.75rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-height: 140px;
         }
 
         .stat-number {
-            font-size: 1.75rem;
+            font-size: 1.85rem;
             font-weight: 800;
             color: var(--accent-green);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .stat-label {
             font-size: 0.75rem;
             color: var(--text-muted);
             font-weight: 600;
+            line-height: 1.3;
         }
 
-        /* Business Feature Card Modifications */
+        /* Business Feature Card Layout */
         .feature-card {
             background-color: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            padding: 1.25rem 0.75rem;
+            padding: 1.25rem 0.85rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            min-height: 180px;
         }
 
         .feature-icon {
             color: var(--primary-blue);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 0.25rem;
         }
 
@@ -147,15 +150,16 @@
         .feature-desc {
             font-size: 0.75rem;
             color: var(--text-muted);
+            line-height: 1.4;
         }
 
-        /* UPDATED: Automatic Testimonial Carousel */
+        /* STYLING FIX: Automatic Testimonial Carousel Slider CSS */
         .carousel-container {
             position: relative;
             max-width: 600px;
             margin: 0 auto;
             overflow: hidden;
-            padding-bottom: 2rem;
+            padding-bottom: 2.5rem;
         }
 
         .carousel-track {
@@ -188,6 +192,7 @@
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
             color: #e2e8f0;
+            line-height: 1.5;
         }
 
         .client-profile {
@@ -219,7 +224,7 @@
             color: var(--text-muted);
         }
 
-        /* Carousel Nav Dots */
+        /* Slider Navigation Dots */
         .carousel-dots {
             display: flex;
             justify-content: center;
@@ -242,12 +247,12 @@
             background-color: var(--primary-blue);
         }
 
-        /* CTA & Footer Contact Section */
+        /* CTA & Footer Contact Styles */
         .cta-card {
             background-color: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 2.5rem 1.5rem;
+            padding: 2.5rem 1.25rem;
             text-align: center;
         }
 
@@ -263,7 +268,7 @@
             margin-bottom: 2rem;
         }
 
-        /* Embedded Contact Buttons layout */
+        /* Embedded Dynamic Links Layout Grid */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -275,7 +280,7 @@
             background-color: transparent;
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-main);
-            padding: 0.75rem 0.5rem;
+            padding: 0.85rem 0.5rem;
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -308,9 +313,14 @@
             display: block;
             margin-top: 1rem;
             box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+            transition: opacity 0.2s;
         }
 
-        /* Breakpoint Adjustments for desktops */
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Desktop Media Queries */
         @media (min-width: 768px) {
             .grid-2x2 {
                 grid-template-columns: repeat(4, 1fr);
@@ -318,6 +328,7 @@
             }
             .feature-card, .stat-card {
                 padding: 2rem 1.5rem;
+                min-height: auto;
             }
             .contact-grid {
                 display: flex;
@@ -348,7 +359,7 @@
         <span class="section-tag">Proof of Performance</span>
         <h2 class="section-title">My <span>Results</span></h2>
         
-        <!-- FIXED Grid: Keeps a perfect 2 items per line on mobile -->
+        <!-- FIXED Grid: Forces exactly 2 columns per line on mobile layouts -->
         <div class="grid-2x2">
             <div class="stat-card">
                 <div class="stat-number">12X</div>
@@ -374,7 +385,7 @@
         <span class="section-tag">Value Proposition</span>
         <h2 class="section-title">Why Businesses Work <span>With Me</span></h2>
         
-        <!-- FIXED Grid: Keeps a perfect 2 items per line on mobile -->
+        <!-- FIXED Grid: Forces exactly 2 columns per line on mobile layouts -->
         <div class="grid-2x2">
             <div class="feature-card">
                 <i class="fa-solid fa-chart-line feature-icon"></i>
@@ -399,7 +410,7 @@
         </div>
     </section>
 
-    <!-- Social Proof Section (Automatic Slider Carousel) -->
+    <!-- Social Proof Section (Automatic Slide Carousel) -->
     <section class="container">
         <span class="section-tag">Social Proof</span>
         <h2 class="section-title">What Clients <span>Say</span></h2>
@@ -443,7 +454,7 @@
 
             </div>
 
-            <!-- Slider Dots -->
+            <!-- Slider Indicator Dots -->
             <div class="carousel-dots" id="carouselDots">
                 <span class="dot active" onclick="goToSlide(0)"></span>
                 <span class="dot" onclick="goToSlide(1)"></span>
@@ -451,24 +462,24 @@
         </div>
     </section>
 
-    <!-- Updated Contact Link Blocks -->
+    <!-- Embedded Verification Contact Links Grid -->
     <section class="container">
         <div class="cta-card">
             <h2>Let's Grow Your Business</h2>
             <p>Get in touch directly to discuss scaling your customer channels and stabilizing acquisition costs.</p>
             
             <div class="contact-grid">
-                <!-- Embedded Email -->
+                <!-- Configured User Email Link -->
                 <a href="mailto:fkhrhayat786@gmail.com" class="btn-secondary">
                     <i class="fa-solid fa-envelope"></i> Email Me
                 </a>
                 
-                <!-- Embedded Direct Call -->
+                <!-- Configured User Call Link -->
                 <a href="tel:+923080372554" class="btn-secondary">
                     <i class="fa-solid fa-phone"></i> Call Direct
                 </a>
                 
-                <!-- Embedded WhatsApp Link -->
+                <!-- Configured User WhatsApp API Endpoint -->
                 <a href="https://wa.me/923080372554" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp
                 </a>
@@ -486,13 +497,13 @@
         </div>
     </section>
 
-    <!-- Carousel functionality Script -->
+    <!-- JavaScript For Autoplay Carousel Transitions -->
     <script>
         const track = document.getElementById('carouselTrack');
         const dots = document.querySelectorAll('.dot');
         let currentIndex = 0;
         const totalSlides = dots.length;
-        const slideInterval = 4000; // Auto sliding countdown (4 Seconds)
+        const slideInterval = 4000; // Switch slide every 4000ms (4 Seconds)
 
         function updateSlider() {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -511,7 +522,7 @@
             updateSlider();
         }
 
-        // Initialize Automatic Slider Loop
+        // Initialize Carousel Auto loop
         setInterval(nextSlide, slideInterval);
     </script>
 
