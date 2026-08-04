@@ -133,7 +133,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           3. PAGE HERO BANNER (UPDATED WITH BETTER SPACING)
+           3. PAGE HERO BANNER
            -------------------------------------------------------------------------- */
         .page-hero {
             padding: 4rem 0 2.5rem;
@@ -178,7 +178,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           4. INDUSTRY FILTERS (ADDED CLEAR MARGINS & GAP)
+           4. INDUSTRY FILTERS
            -------------------------------------------------------------------------- */
         .filter-section {
             padding: 2.5rem 0 1.5rem;
@@ -258,15 +258,17 @@
             overflow: hidden;
         }
 
-        .thumb-placeholder {
+        /* Thumbnail Image Styling */
+        .case-img {
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0b1329 0%, #1f2937 100%);
-            color: var(--text-muted);
-            font-size: 2.5rem;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .case-thumb-card:hover .case-img {
+            transform: scale(1.05);
         }
 
         .category-badge {
@@ -283,6 +285,7 @@
             border-radius: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            z-index: 2;
         }
 
         .stat-highlight-badge {
@@ -295,6 +298,7 @@
             font-weight: 800;
             padding: 0.35rem 0.75rem;
             border-radius: 6px;
+            z-index: 2;
         }
 
         .thumb-content {
@@ -455,7 +459,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           7. RESPONSIVE MEDIA QUERIES (IMPROVED MOBILE SPACING)
+           7. RESPONSIVE MEDIA QUERIES
            -------------------------------------------------------------------------- */
         @media (max-width: 1024px) {
             .case-grid {
@@ -581,7 +585,7 @@
             <!-- THUMBNAIL 1: Furniture & Decor Store -->
             <a href="case-study-detail-1.html" class="case-thumb-card" data-category="ecommerce">
                 <div class="thumb-image-wrapper">
-                    <div class="thumb-placeholder"><i class="fa-solid fa-couch"></i></div>
+                    <img src="assets/thumb-furniture.png" alt="Furniture & Decor Store Meta Ads Case Study" class="case-img">
                     <span class="category-badge">eCommerce</span>
                     <span class="stat-highlight-badge">18.01 ROAS</span>
                 </div>
@@ -600,7 +604,7 @@
             <!-- THUMBNAIL 2: Drone Store -->
             <a href="case-study-detail-2.html" class="case-thumb-card" data-category="ecommerce">
                 <div class="thumb-image-wrapper">
-                    <div class="thumb-placeholder"><i class="fa-solid fa-camera-retro"></i></div>
+                    <img src="assets/thumb-drone.png" alt="High-Ticket Drone Store Meta Ads Case Study" class="case-img">
                     <span class="category-badge">eCommerce</span>
                     <span class="stat-highlight-badge">13.15 ROAS</span>
                 </div>
@@ -619,7 +623,7 @@
             <!-- THUMBNAIL 3: Private Label Furniture -->
             <a href="case-study-detail-3.html" class="case-thumb-card" data-category="ecommerce">
                 <div class="thumb-image-wrapper">
-                    <div class="thumb-placeholder"><i class="fa-solid fa-chart-line"></i></div>
+                    <img src="assets/thumb-cplv.png" alt="Private Label Furniture Meta Ads Case Study" class="case-img">
                     <span class="category-badge">eCommerce</span>
                     <span class="stat-highlight-badge">2,683 LPV (£0.03 CPLV)</span>
                 </div>
