@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Meta Ads Case Studies | Fakhar Hayat</title>
+    <meta name="description" content="Explore real-world Meta Ads (Facebook & Instagram) case studies by Fakhar Hayat. Proven performance marketing strategies and ROAS figures.">
+    <meta name="author" content="Fakhar Hayat">
+    <meta name="robots" content="index, follow">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --------------------------------------------------------------------------
+           1. EXACT HOMEPAGE THEME & BRANDING VARIABLES
+           -------------------------------------------------------------------------- */
+        :root {
+            --bg-deep: #030712;         
+            --bg-card: #0b1329;         
+            --border-subtle: #1f2937;    
+            --border-hover: #374151;     
+            --accent-primary: #2563eb;   
+            --accent-success: #10b981;   
+            --action-orange: #ea580c;    
+            --text-pure: #ffffff;        
+            --text-muted: #9ca3af;       
+            --glass-bg: rgba(11, 19, 41, 0.7);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-deep);
+            color: var(--text-pure);
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* --------------------------------------------------------------------------
+           2. NAVIGATION (IDENTICAL TO HOMEPAGE)
+           -------------------------------------------------------------------------- */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-pure);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover {
+            color: var(--text-pure);
+        }
+
+        .nav-cta {
+            background-color: var(--accent-primary);
+            color: var(--text-pure);
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-cta:hover {
+            background-color: #1d4ed8;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-pure);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------
+           3. PAGE HERO BANNER
+           -------------------------------------------------------------------------- */
+        .page-hero {
+            padding: 3.5rem 0 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, rgba(3, 7, 18, 0) 100%);
+        }
+
+        .hero-badge {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 span {
+            color: var(--accent-primary);
+        }
+
+        .page-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* --------------------------------------------------------------------------
+           4. INDUSTRY FILTERS
+           -------------------------------------------------------------------------- */
+        .filter-section {
+            padding: 2rem 0 1rem;
+        }
+
+        .filter-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            padding: 0.6rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--border-hover);
+            color: var(--text-pure);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: var(--text-pure);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        /* --------------------------------------------------------------------------
+           5. CASE STUDY THUMBNAIL LAYOUT GRID (PAGE 2 INDEX)
+           -------------------------------------------------------------------------- */
+        .case-grid-section {
+            padding: 2rem 0 5rem;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .case-thumb-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text-pure);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .case-thumb-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        .thumb-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background: #111827;
+            overflow: hidden;
+        }
+
+        .thumb-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0b1329 0%, #1f2937 100%);
+            color: var(--text-muted);
+            font-size: 2.5rem;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-highlight-badge {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(16, 185, 129, 0.95);
+            color: #000;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+        }
+
+        .thumb-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .thumb-title-zone h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-bottom: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .case-thumb-card:hover .thumb-title-zone h3 {
+            color: var(--accent-primary);
+        }
+
+        .thumb-title-zone p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .thumb-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        .thumb-footer i {
+            transition: transform 0.3s ease;
+        }
+
+        .case-thumb-card:hover .thumb-footer i {
+            transform: translateX(5px);
+        }
+
+        /* --------------------------------------------------------------------------
+           6. FOOTER (EXACT MATCH TO HOMEPAGE)
+           -------------------------------------------------------------------------- */
+        footer {
+            background-color: #020613;
+            border-top: 1px solid var(--border-subtle);
+            padding: 2.5rem 0 1.25rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-pure);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-brand .footer-logo span {
+            color: var(--accent-primary);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .footer-nav-services-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .footer-col h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.85rem;
+            color: var(--text-pure);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-pure);
+        }
+
+        .footer-bottom-center {
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-bottom-center h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            color: var(--text-pure);
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icon:hover {
+            color: var(--text-pure);
+            border-color: var(--border-hover);
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* --------------------------------------------------------------------------
+           7. RESPONSIVE MEDIA QUERIES
+           -------------------------------------------------------------------------- */
+        @media (max-width: 1024px) {
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-deep);
+                border-top: 1px solid var(--border-subtle);
+                flex-direction: column;
+                padding: 2rem 1.25rem;
+                gap: 1.5rem;
+                align-items: flex-start;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-nav-services-group {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV HEADER -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">FAKHAR<span>.</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#top" class="nav-link">Home / About</a></li>
+                <li><a href="meta-ads-case-studies.html" class="nav-link" style="color: var(--text-pure);">Meta Case Studies</a></li>
+                <li><a href="index.html#services" class="nav-link">My Services</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- PAGE HERO HEADER -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="hero-badge"><i class="fa-brands fa-meta"></i> PROVEN RESULTS</span>
+            <h1>Meta Ads <span>Case Studies</span></h1>
+            <p>Explore performance marketing results, audience structures, and revenue strategies scaled across Facebook & Instagram.</p>
+        </div>
+    </section>
+
+    <!-- CATEGORY FILTERS -->
+    <section class="filter-section container">
+        <div class="filter-wrapper">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ecommerce">eCommerce</button>
+            <button class="filter-btn" data-filter="lead-gen">Lead Generation</button>
+            <button class="filter-btn" data-filter="local-business">Local Businesses</button>
+        </div>
+    </section>
+
+    <!-- CASE STUDY THUMBNAIL GRID -->
+    <section class="case-grid-section container">
+        <div class="case-grid" id="caseGrid">
+
+            <!-- THUMBNAIL 1 (eCommerce Placeholder) -->
+            <a href="case-study-detail-1.html" class="case-thumb-card" data-category="ecommerce">
+                <div class="thumb-image-wrapper">
+                    <div class="thumb-placeholder"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <span class="category-badge">eCommerce</span>
+                    <span class="stat-highlight-badge">[ Result Key Stat ]</span>
+                </div>
+                <div class="thumb-content">
+                    <div class="thumb-title-zone">
+                        <h3>[ Brand/Client Name 1 ]</h3>
+                        <p>[ Short 1-2 line summary teaser about the client's campaign goal and revenue outcome ]</p>
+                    </div>
+                    <div class="thumb-footer">
+                        <span>Read Case Study</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- THUMBNAIL 2 (Lead Gen Placeholder) -->
+            <a href="case-study-detail-2.html" class="case-thumb-card" data-category="lead-gen">
+                <div class="thumb-image-wrapper">
+                    <div class="thumb-placeholder"><i class="fa-solid fa-bullseye"></i></div>
+                    <span class="category-badge">Lead Gen</span>
+                    <span class="stat-highlight-badge">[ Result Key Stat ]</span>
+                </div>
+                <div class="thumb-content">
+                    <div class="thumb-title-zone">
+                        <h3>[ Brand/Client Name 2 ]</h3>
+                        <p>[ Short 1-2 line summary teaser about the client's campaign goal and revenue outcome ]</p>
+                    </div>
+                    <div class="thumb-footer">
+                        <span>Read Case Study</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- THUMBNAIL 3 (Local Business Placeholder) -->
+            <a href="case-study-detail-3.html" class="case-thumb-card" data-category="local-business">
+                <div class="thumb-image-wrapper">
+                    <div class="thumb-placeholder"><i class="fa-solid fa-store"></i></div>
+                    <span class="category-badge">Local Business</span>
+                    <span class="stat-highlight-badge">[ Result Key Stat ]</span>
+                </div>
+                <div class="thumb-content">
+                    <div class="thumb-title-zone">
+                        <h3>[ Brand/Client Name 3 ]</h3>
+                        <p>[ Short 1-2 line summary teaser about the client's campaign goal and revenue outcome ]</p>
+                    </div>
+                    <div class="thumb-footer">
+                        <span>Read Case Study</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">FAKHAR<span>HAYAT</span></a>
+                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.</p>
+                <p style="margin-top: 1rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.</p>
+            </div>
+            
+            <div class="footer-nav-services-group">
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#top">About Me</a></li>
+                        <li><a href="meta-ads-case-studies.html">Case Studies</a></li>
+                        <li><a href="index.html#services">My Services</a></li>
+                        <li><a href="index.html#contact">Hire Me</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Meta Paid Campaigns</a></li>
+                        <li><a href="index.html#services">Google Ads Engines</a></li>
+                        <li><a href="index.html#services">Technical SEO Systems</a></li>
+                        <li><a href="index.html#services">Conversion Tracking</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom-center">
+            <h4>Connect With Me</h4>
+            <div class="footer-socials">
+                <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/fakhr.awan786" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/fkhr.awan/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const caseCards = document.querySelectorAll('.case-thumb-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                caseCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
