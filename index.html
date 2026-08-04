@@ -202,66 +202,57 @@
         }
 
         /* --------------------------------------------------------------------------
-           3. HERO SECTION
+           3. MERGED HERO & ABOUT SECTION
            -------------------------------------------------------------------------- */
         .hero-section {
-            padding: 6rem 0;
+            padding: 5rem 0;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 3.5rem;
+            align-items: start;
         }
 
-        .hero-content {
-            text-align: left;
+        .hero-profile-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
         }
 
-        .hero-badge {
-            background: rgba(37, 99, 235, 0.1);
-            border: 1px solid rgba(37, 99, 235, 0.2);
-            color: var(--accent-primary);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.4rem 1rem;
-            border-radius: 9999px;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
+        .profile-wrapper {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            height: 380px;
+            overflow: hidden;
         }
 
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to bottom right, #fff 60%, #9ca3af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-section p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 620px;
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .hero-ctas {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
+            width: 100%;
         }
 
         .btn {
-            padding: 0.8rem 1.75rem;
+            flex: 1;
+            padding: 0.8rem 1rem;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-decoration: none;
             transition: var(--transition-smooth);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
+            text-align: center;
         }
 
         .btn-main {
@@ -287,121 +278,46 @@
             transform: translateY(-2px);
         }
 
-        .hero-visual {
-            position: relative;
+        .hero-content {
+            text-align: left;
         }
 
-        .dashboard-placeholder {
-            width: 100%;
-            height: 380px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .db-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 0.75rem;
-        }
-
-        .db-dots {
-            display: flex;
-            gap: 5px;
-        }
-
-        .db-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .db-body {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-muted);
-        }
-
-        .db-graph {
-            width: 100%;
-            height: 120px;
-            display: flex;
-            align-items: flex-end;
-            gap: 8px;
-            padding-top: 1rem;
-        }
-
-        .db-bar {
-            flex-grow: 1;
-            background: linear-gradient(to top, var(--accent-primary), #60a5fa);
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            transition: var(--transition-smooth);
-        }
-
-        /* --------------------------------------------------------------------------
-           4. ABOUT ME SECTION
-           -------------------------------------------------------------------------- */
-        .about-section {
-            padding: 6rem 0;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .profile-wrapper {
-            position: relative;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            height: 420px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .about-content h3 {
-            font-size: 1.75rem;
+        .hero-badge {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            display: inline-block;
             margin-bottom: 1.25rem;
-            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-        .about-content p {
+        .hero-content h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(to bottom right, #fff 60%, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
         }
 
         .mini-stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1.25rem;
+            margin-top: 1.75rem;
         }
 
         .mini-stat-card {
@@ -426,10 +342,10 @@
         }
 
         /* --------------------------------------------------------------------------
-           5. CASE STUDIES SECTION (NEW COMPACT DESIGN)
+           4. CASE STUDIES SECTION (COMPACT BOX LAYOUT)
            -------------------------------------------------------------------------- */
         .case-section {
-            padding: 6rem 0;
+            padding: 5rem 0;
             border-top: 1px solid var(--border-subtle);
             background: rgba(255,255,255,0.01);
         }
@@ -509,10 +425,10 @@
         }
 
         /* --------------------------------------------------------------------------
-           6. MY SERVICES SECTION
+           5. MY SERVICES SECTION (SHORTENED CARDS)
            -------------------------------------------------------------------------- */
         .services-section {
-            padding: 6rem 0;
+            padding: 5rem 0;
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
         }
@@ -520,16 +436,17 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .service-card {
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 2.5rem 2rem;
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             transition: var(--transition-smooth);
         }
 
@@ -550,41 +467,21 @@
             justify-content: center;
             color: var(--accent-primary);
             font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.3px;
         }
 
         .service-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 1.5rem;
             line-height: 1.5;
-        }
-
-        .service-list {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .service-list li {
-            font-size: 0.85rem;
-            color: var(--text-pure);
-            margin-bottom: 0.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .service-list li i {
-            color: var(--accent-success);
-            font-size: 0.8rem;
         }
 
         .service-btn {
@@ -605,10 +502,10 @@
         }
 
         /* --------------------------------------------------------------------------
-           7. DIRECT CONTACT BLOCK
+           6. DIRECT CONTACT BLOCK
            -------------------------------------------------------------------------- */
         .contact-section {
-            padding: 7rem 0;
+            padding: 6rem 0;
             text-align: center;
         }
 
@@ -617,13 +514,13 @@
             margin: 0 auto;
             background: linear-gradient(135deg, #0b1329 0%, #030712 100%);
             border: 1px solid var(--border-subtle);
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
             border-radius: 20px;
             box-shadow: 0 30px 60px -15px rgba(0,0,0,0.8);
         }
 
         .contact-box h2 {
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 1rem;
@@ -632,7 +529,7 @@
         .contact-box p {
             color: var(--text-muted);
             margin-bottom: 2.5rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .contact-channels {
@@ -674,9 +571,9 @@
         .big-cta-action {
             background-color: var(--action-orange);
             color: var(--text-pure);
-            padding: 1rem 3rem;
+            padding: 1rem 2.5rem;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             text-decoration: none;
             display: inline-block;
@@ -691,7 +588,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           8. FOOTER
+           7. FOOTER
            -------------------------------------------------------------------------- */
         footer {
             background-color: #020613;
@@ -795,30 +692,24 @@
         }
 
         /* --------------------------------------------------------------------------
-           9. RESPONSIVE MEDIA QUERIES
+           8. RESPONSIVE MEDIA QUERIES
            -------------------------------------------------------------------------- */
         @media (max-width: 1024px) {
             .hero-section {
                 grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
+                gap: 2.5rem;
                 padding: 4rem 0;
             }
+            .hero-profile-col {
+                max-width: 450px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            .hero-content {
+                text-align: center;
+            }
             .hero-content h1 {
-                font-size: 3rem;
-            }
-            .hero-section p {
-                margin: 0 auto 2.5rem auto;
-            }
-            .hero-ctas {
-                justify-content: center;
-            }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .profile-wrapper {
-                height: 320px;
+                font-size: 2.25rem;
             }
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -853,9 +744,6 @@
             .case-grid, .services-grid, .footer-grid {
                 grid-template-columns: 1fr;
             }
-            .hero-content h1 {
-                font-size: 2.25rem;
-            }
             .section-title {
                 font-size: 1.75rem;
                 margin-bottom: 2rem;
@@ -879,7 +767,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#top" class="nav-link">About</a></li>
                 <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
                 <li><a href="#services" class="nav-link">My Services</a></li>
                 <li><a href="#contact" class="nav-cta">Hire Me</a></li>
@@ -887,78 +775,46 @@
         </div>
     </header>
 
-    <!-- CORE SITE HERO BLOCK -->
+    <!-- MERGED HERO & ABOUT SECTION -->
     <section class="container hero-section fade-in-up" id="top">
-        <div class="hero-content">
-            <span class="hero-badge">PERFORMANCE MARKETING SPECIALIST</span>
-            <h1>Helping Businesses Scale Profitably Through Performance Marketing</h1>
-            <p>I am Fakhar Hayat, an individual Performance Marketing Specialist helping eCommerce brands and service businesses increase revenue with Meta Ads, Google Ads, SEO, and data-driven marketing strategies.</p>
+        <div class="hero-profile-col">
+            <div class="profile-wrapper">
+                <img src="assets/profile.jpg" alt="Fakhar Hayat - Performance Marketing Specialist" class="profile-image">
+            </div>
             <div class="hero-ctas">
                 <a href="#case-studies" class="btn btn-main">View Case Studies <i class="fa-solid fa-arrow-right"></i></a>
                 <a href="#contact" class="btn btn-outline">Hire Me</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="dashboard-placeholder" aria-hidden="true">
-                <div class="db-header">
-                    <div class="db-dots">
-                        <div class="db-dot"></div>
-                        <div class="db-dot"></div>
-                        <div class="db-dot"></div>
-                    </div>
-                    <div style="font-size:0.7rem; color:var(--text-muted); font-weight:600;">LIVE CAMPAIGN DATA</div>
+
+        <div class="hero-content">
+            <span class="hero-badge">PERFORMANCE MARKETING SPECIALIST</span>
+            <h1>High-ROI Paid Advertising & Growth Marketing</h1>
+            <p>I am Fakhar Hayat, a dedicated Performance Marketing Specialist focused on measurable revenue growth. I help eCommerce brands and service businesses scale profitably through data-driven campaigns, granular ad testing, and conversion tracking.</p>
+            <p>Unlike generic agencies, I work directly on your brand strategy to make sure every dollar of managed ad spend delivers a predictable return on investment.</p>
+            
+            <div class="mini-stats-grid">
+                <div class="mini-stat-card">
+                    <h4>3+ Years</h4>
+                    <p>Industry Experience</p>
                 </div>
-                <div class="db-body">
-                    <div style="font-size:1.75rem; font-weight:800; color:var(--text-pure);">$14,820.50</div>
-                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent-success); font-weight:700;"><i class="fa-solid fa-caret-up"></i> +41.2% Revenue Multiplier</div>
-                    <div class="db-graph">
-                        <div class="db-bar" style="height: 40%;"></div>
-                        <div class="db-bar" style="height: 55%;"></div>
-                        <div class="db-bar" style="height: 45%;"></div>
-                        <div class="db-bar" style="height: 75%;"></div>
-                        <div class="db-bar" style="height: 95%;"></div>
-                        <div class="db-bar" style="height: 85%;"></div>
-                    </div>
+                <div class="mini-stat-card">
+                    <h4>100+</h4>
+                    <p>Campaigns Optimized</p>
+                </div>
+                <div class="mini-stat-card">
+                    <h4>Global</h4>
+                    <p>Client Reach</p>
+                </div>
+                <div class="mini-stat-card">
+                    <h4>Meta</h4>
+                    <p>Certified Specialist</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CREDIBILITY ABOUT ME PANEL -->
-    <section class="container about-section" id="about">
-        <div class="about-grid">
-            <div class="profile-wrapper">
-                <img src="assets/profile.jpg" alt="Fakhar Hayat - Performance Marketing Specialist" class="profile-image">
-            </div>
-            <div class="about-content">
-                <span class="section-tag">About Me</span>
-                <h3>High-ROI Paid Advertising Tailored For Growth</h3>
-                <p>I am an independent digital marketer focused strictly on numbers that affect your bottom line. I do not run a generic agency; I work directly on your brand strategy to make sure every dollar of managed ad spend produces a measurable return.</p>
-                <p>My methodology revolves around clean system tracking, granular creative testing, and aggressive target scaling designed to pull high-intent customers into your funnels.</p>
-                
-                <div class="mini-stats-grid">
-                    <div class="mini-stat-card">
-                        <h4>3+ Years</h4>
-                        <p>Industry Experience</p>
-                    </div>
-                    <div class="mini-stat-card">
-                        <h4>100+</h4>
-                        <p>Campaigns Optimized</p>
-                    </div>
-                    <div class="mini-stat-card">
-                        <h4>Global</h4>
-                        <p>Client Reach</p>
-                    </div>
-                    <div class="mini-stat-card">
-                        <h4>Meta</h4>
-                        <p>Certified Specialist</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CASE STUDIES SECTION (PLACED FIRST, COMPACT BOX LAYOUT) -->
+    <!-- CASE STUDIES SECTION (PLACED FIRST) -->
     <section class="case-section" id="case-studies">
         <div class="container">
             <span class="section-tag">Real-World Performance</span>
@@ -973,7 +829,6 @@
                         <h3>Meta Ads Results</h3>
                         <p>Explore detailed case studies and proven strategies for scaling e-commerce stores and lead generation campaigns through targeted Facebook & Instagram ads.</p>
                     </div>
-                    <!-- Replace '#' with your subpage link in the future -->
                     <a href="meta-ads-case-studies.html" class="case-btn">View Full Case Studies <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
@@ -984,7 +839,6 @@
                         <h3>TikTok Ads Results</h3>
                         <p>Discover how high-converting creative testing loops and UGC ad strategies drive mass engagement and lower customer acquisition costs on TikTok.</p>
                     </div>
-                    <!-- Replace '#' with your subpage link in the future -->
                     <a href="tiktok-ads-case-studies.html" class="case-btn">View Full Case Studies <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
@@ -992,7 +846,7 @@
         </div>
     </section>
 
-    <!-- MY SERVICES SECTION (PLACED SECOND) -->
+    <!-- SHORTENED MY SERVICES SECTION -->
     <section class="services-section" id="services">
         <div class="container">
             <span class="section-tag">What I Excel At</span>
@@ -1001,97 +855,73 @@
                 
                 <!-- Card 1 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-brands fa-meta"></i></div>
-                    <h3>Meta Ads Management</h3>
-                    <p>End-to-end management built to scale your customer base across Facebook and Instagram channels.</p>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Complex Campaign Setup</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Structural Scaling Blueprints</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Intent-Based Retargeting</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Pixel & Conversion API Setup</li>
-                    </ul>
-                    <a href="#contact" class="service-btn">Learn More</a>
+                    <div>
+                        <div class="service-icon"><i class="fa-brands fa-meta"></i></div>
+                        <h3>Meta Ads Management</h3>
+                        <p>End-to-end management built to scale revenue across Facebook and Instagram channels.</p>
+                    </div>
+                    <a href="meta-ads-service.html" class="service-btn">Learn More</a>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h3>SEO Optimization</h3>
-                    <p>Increasing organic traffic and capture high-intent users actively searching for your service.</p>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Advanced Keyword Technical Audits</li>
-                        <li><i class="fa-solid fa-circle-check"></i> In-depth On-Page Optimization</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Organic Lead Generation Frameworks</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Long-term Authority Strategy</li>
-                    </ul>
-                    <a href="#contact" class="service-btn">Learn More</a>
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h3>SEO Optimization</h3>
+                        <p>Increasing organic visibility and capturing high-intent search traffic for long-term growth.</p>
+                    </div>
+                    <a href="seo-service.html" class="service-btn">Learn More</a>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Building real organic engagement and brand visibility over core consumer channels.</p>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> High-Retention Content Planning</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Structured Growth Ecosystems</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Creative Audience Scaling</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Multi-channel Profile Optimization</li>
-                    </ul>
-                    <a href="#contact" class="service-btn">Learn More</a>
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                        <h3>Social Media Marketing</h3>
+                        <p>Building high organic engagement and brand presence across core consumer platforms.</p>
+                    </div>
+                    <a href="smm-service.html" class="service-btn">Learn More</a>
                 </div>
 
                 <!-- Card 4 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-brands fa-google"></i></div>
-                    <h3>Google Ads</h3>
-                    <p>Capture bottom-of-the-funnel buyers at the precise millisecond they are searching for a solution.</p>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> High-ROI Search Campaigns</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Performance Max (PMax) Management</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Strategic Negative Keyword Sifting</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Direct Competitor Conquesting</li>
-                    </ul>
-                    <a href="#contact" class="service-btn">Learn More</a>
+                    <div>
+                        <div class="service-icon"><i class="fa-brands fa-google"></i></div>
+                        <h3>Google Ads</h3>
+                        <p>Capturing bottom-of-the-funnel buyers actively searching for your solutions in real time.</p>
+                    </div>
+                    <a href="google-ads-service.html" class="service-btn">Learn More</a>
                 </div>
 
                 <!-- Card 5 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-brands fa-shopify"></i></div>
-                    <h3>Shopify Marketing</h3>
-                    <p>Turn web traffic into checkout transactions using specific e-commerce optimizations.</p>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Abandoned Checkout Funnel Builds</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Average Order Value (AOV) Boosts</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Landing Page Optimization</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Customer Lifecycle Retention</li>
-                    </ul>
-                    <a href="#contact" class="service-btn">Learn More</a>
+                    <div>
+                        <div class="service-icon"><i class="fa-brands fa-shopify"></i></div>
+                        <h3>Shopify Marketing</h3>
+                        <p>Optimizing store conversion setups and cart recovery funnels to increase sales.</p>
+                    </div>
+                    <a href="shopify-marketing-service.html" class="service-btn">Learn More</a>
                 </div>
 
                 <!-- Card 6 -->
                 <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                    <h3>Data Analytics & Tracking</h3>
-                    <p>Clean server data integration ensuring every transaction maps accurately to its acquisition source.</p>
-                    <ul class="service-list">
-                        <li><i class="fa-solid fa-circle-check"></i> Google Analytics 4 (GA4) Architecture</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Custom Google Tag Manager Triggers</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Server-Side Cookie Configurations</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Interactive Marketing Dashboards</li>
-                    </ul>
-                    <a href="#contact" class="service-btn">Learn More</a>
+                    <div>
+                        <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3>Data Analytics & Tracking</h3>
+                        <p>Precise CAPI, Pixel, and GA4 tracking configurations for accurate attribution data.</p>
+                    </div>
+                    <a href="analytics-service.html" class="service-btn">Learn More</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- HIGH-INTENT DIRECT CALL TO ACTION BOX -->
+    <!-- DIRECT CONTACT BLOCK -->
     <section class="container contact-section" id="contact">
         <div class="contact-box">
             <h2>Let's Grow Your Business</h2>
-            <p>Get in touch directly to discuss scaling your customer channels and stabilizing acquisition costs.</p>
+            <p>Get in touch directly to discuss scaling your customer acquisition channels profitably.</p>
             
             <div class="contact-channels">
                 <a href="mailto:fkhrhayat786@gmail.com" class="channel-btn"><i class="fa-solid fa-envelope"></i> Email Me</a>
@@ -1105,7 +935,7 @@
         </div>
     </section>
 
-    <!-- MODERN BRAND FOOTER -->
+    <!-- FOOTER -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -1125,7 +955,7 @@
             <div class="footer-col">
                 <h4>Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#top">About Me</a></li>
                     <li><a href="#case-studies">Case Studies</a></li>
                     <li><a href="#services">My Services</a></li>
                     <li><a href="#contact">Hire Me</a></li>
