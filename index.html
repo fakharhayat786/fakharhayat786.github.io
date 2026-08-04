@@ -43,13 +43,10 @@
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Swiper.js CSS Assets for Carousel Implementation -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         /* --------------------------------------------------------------------------
-           1. MODERN RESET & GLOBAL STYLES (SaaS Premium Aesthetic)
+           1. MODERN RESET & GLOBAL STYLES
            -------------------------------------------------------------------------- */
         :root {
             --bg-deep: #030712;         
@@ -205,7 +202,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           3. HERO SECTION (SaaS Layout Framework)
+           3. HERO SECTION
            -------------------------------------------------------------------------- */
         .hero-section {
             padding: 6rem 0;
@@ -355,7 +352,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           4. ABOUT ME SECTION (Personal Credibility)
+           4. ABOUT ME SECTION
            -------------------------------------------------------------------------- */
         .about-section {
             padding: 6rem 0;
@@ -386,8 +383,6 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
         }
 
         .about-content h3 {
@@ -431,95 +426,93 @@
         }
 
         /* --------------------------------------------------------------------------
-           5. TRUSTED CLIENT LOOPS
+           5. CASE STUDIES SECTION (NEW COMPACT DESIGN)
            -------------------------------------------------------------------------- */
-        .trust-section {
-            padding: 3rem 0;
+        .case-section {
+            padding: 6rem 0;
             border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            background: rgba(255, 255, 255, 0.01);
-            text-align: center;
+            background: rgba(255,255,255,0.01);
         }
 
-        .trust-title {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 1.75rem;
-            font-weight: 600;
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
         }
 
-        .logo-marquee {
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2.25rem 2rem;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 4rem;
-        }
-
-        .logo-item {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: -0.5px;
-            opacity: 0.6;
+            flex-direction: column;
+            justify-content: space-between;
             transition: var(--transition-smooth);
         }
 
-        .logo-item:hover {
-            opacity: 1;
+        .case-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        .case-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-pure);
+        }
+
+        .case-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .case-btn {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            padding: 0.8rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .case-card:hover .case-btn {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
             color: var(--text-pure);
         }
 
         /* --------------------------------------------------------------------------
-           6. MY RESULTS SHOWCASE (Responsive Row Layout Fix)
-           -------------------------------------------------------------------------- */
-        .results-section {
-            padding: 6rem 0;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .metric-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            transition: var(--transition-smooth);
-        }
-
-        .metric-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-        }
-
-        .metric-big {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--accent-success);
-            line-height: 1;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.03em;
-        }
-
-        .metric-context {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* --------------------------------------------------------------------------
-           7. MY SERVICES SECTION (High-CRO Conversion Cards)
+           6. MY SERVICES SECTION
            -------------------------------------------------------------------------- */
         .services-section {
             padding: 6rem 0;
-            background: rgba(255,255,255,0.01);
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
         }
@@ -612,205 +605,11 @@
         }
 
         /* --------------------------------------------------------------------------
-           9. MY CASE STUDIES SECTION (SaaS Slider Engine Architecture)
-           -------------------------------------------------------------------------- */
-        .case-section {
-            padding: 6rem 0;
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            background: rgba(255,255,255,0.01);
-            overflow: hidden; 
-        }
-
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-
-        .case-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition-smooth);
-            height: 100%;
-            width: 100%;
-        }
-
-        .case-card:hover {
-            border-color: var(--border-hover);
-        }
-
-        .case-thumb-placeholder {
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .case-body {
-            padding: 2rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .case-body h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.3px;
-        }
-
-        .case-block {
-            margin-bottom: 1rem;
-        }
-
-        .case-block strong {
-            display: block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
-        }
-
-        .case-block p {
-            font-size: 0.9rem;
-            color: var(--text-pure);
-            margin: 0;
-        }
-
-        .case-result-badge {
-            background: rgba(16, 185, 129, 0.08);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: var(--accent-success);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin: 1rem 0 1.5rem 0;
-            align-self: flex-start;
-        }
-
-        .case-btn {
-            margin-top: auto;
-            text-align: center;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-pure);
-            padding: 0.75rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-        }
-
-        .case-card:hover .case-btn {
-            background: var(--text-pure);
-            color: var(--bg-deep);
-            border-color: var(--text-pure);
-        }
-
-        .swiper-pagination {
-            position: relative !important;
-            margin-top: 2rem;
-        }
-        .swiper-pagination-bullet {
-            background: var(--text-muted) !important;
-            opacity: 0.4;
-        }
-        .swiper-pagination-bullet-active {
-            background: var(--accent-primary) !important;
-            opacity: 1 !important;
-            width: 18px !important;
-            border-radius: 5px !important;
-            transition: var(--transition-smooth);
-        }
-
-        /* --------------------------------------------------------------------------
-           12. TESTIMONIAL CARDS (Updated Swiper Styles)
-           -------------------------------------------------------------------------- */
-        .testimonials-section {
-            padding: 6rem 0;
-            overflow: hidden;
-        }
-
-        .testimonial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 2.25rem;
-            border-radius: 14px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .stars-row {
-            color: #fbbf24;
-            font-size: 0.85rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .testimonial-card p {
-            font-size: 0.95rem;
-            color: var(--text-pure);
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .client-profile-block {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .client-avatar-placeholder {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-
-        .client-meta h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .client-meta p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin: 0;
-            font-style: normal;
-        }
-
-        /* --------------------------------------------------------------------------
-           14. HIGH-CONVERSION DIRECT CONTACT BLOCK
+           7. DIRECT CONTACT BLOCK
            -------------------------------------------------------------------------- */
         .contact-section {
             padding: 7rem 0;
             text-align: center;
-            border-top: 1px solid var(--border-subtle);
         }
 
         .contact-box {
@@ -892,7 +691,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           15. SITE FOOTER Setup (Three Columns + Center Row Setup)
+           8. FOOTER
            -------------------------------------------------------------------------- */
         footer {
             background-color: #020613;
@@ -996,7 +795,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           16. HIGHLY BREAKPOINT RESPONSIVE GRID ADAPTATIONS
+           9. RESPONSIVE MEDIA QUERIES
            -------------------------------------------------------------------------- */
         @media (max-width: 1024px) {
             .hero-section {
@@ -1051,7 +850,7 @@
             .nav-menu.active {
                 left: 0;
             }
-            .services-grid, .footer-grid {
+            .case-grid, .services-grid, .footer-grid {
                 grid-template-columns: 1fr;
             }
             .hero-content h1 {
@@ -1067,31 +866,6 @@
             .contact-box h2 {
                 font-size: 1.85rem;
             }
-
-            /* Force Results Grid into 2x2 rows instead of 1 vertical column */
-            .metrics-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 0.75rem !important;
-            }
-            .metric-card {
-                padding: 1.5rem 0.75rem !important;
-            }
-            .metric-big {
-                font-size: 2rem !important;
-            }
-            .metric-context {
-                font-size: 0.75rem !important;
-            }
-
-            .case-grid {
-                display: flex !important; 
-                flex-direction: row !important;
-                align-items: stretch !important;
-            }
-            .swiper-slide {
-                height: auto !important; 
-                display: flex;
-            }
         }
     </style>
 </head>
@@ -1106,9 +880,8 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#results" class="nav-link">My Results</a></li>
-                <li><a href="#services" class="nav-link">My Services</a></li>
                 <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="#services" class="nav-link">My Services</a></li>
                 <li><a href="#contact" class="nav-cta">Hire Me</a></li>
             </ul>
         </div>
@@ -1185,45 +958,41 @@
         </div>
     </section>
 
-    <!-- REAL COMPANIES VERIFIED LOGO BLOCK -->
-    <section class="trust-section">
+    <!-- CASE STUDIES SECTION (PLACED FIRST, COMPACT BOX LAYOUT) -->
+    <section class="case-section" id="case-studies">
         <div class="container">
-            <div class="trust-title">Brands I Have Worked With</div>
-            <div class="logo-marquee">
-                <div class="logo-item">Decor Ornament</div>
-                <div class="logo-item">Stack Eraa</div>
-                <div class="logo-item">Professional Edge</div>
-                <div class="logo-item">Al Meeqat Travels</div>
-                <div class="logo-item">MEP Range</div>
+            <span class="section-tag">Real-World Performance</span>
+            <h2 class="section-title">My <span>Case Studies</span></h2>
+            
+            <div class="case-grid">
+                
+                <!-- Box 1: Meta Ads Results -->
+                <div class="case-card">
+                    <div>
+                        <div class="case-icon"><i class="fa-brands fa-meta"></i></div>
+                        <h3>Meta Ads Results</h3>
+                        <p>Explore detailed case studies and proven strategies for scaling e-commerce stores and lead generation campaigns through targeted Facebook & Instagram ads.</p>
+                    </div>
+                    <!-- Replace '#' with your subpage link in the future -->
+                    <a href="meta-ads-case-studies.html" class="case-btn">View Full Case Studies <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Box 2: TikTok Ads Results -->
+                <div class="case-card">
+                    <div>
+                        <div class="case-icon"><i class="fa-brands fa-tiktok"></i></div>
+                        <h3>TikTok Ads Results</h3>
+                        <p>Discover how high-converting creative testing loops and UGC ad strategies drive mass engagement and lower customer acquisition costs on TikTok.</p>
+                    </div>
+                    <!-- Replace '#' with your subpage link in the future -->
+                    <a href="tiktok-ads-case-studies.html" class="case-btn">View Full Case Studies <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- VERIFIED PERFORMANCE METRICS PANEL (Row Fixed For Mobile) -->
-    <section class="container results-section" id="results">
-        <span class="section-tag">Proof of Performance</span>
-        <h2 class="section-title">My <span>Results</span></h2>
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-big">12X</div>
-                <div class="metric-context">Max ROAS Across Active Funnels</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-big">$80K+</div>
-                <div class="metric-context">Managed Digital Ad Spend</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-big">100+</div>
-                <div class="metric-context">Ad Campaigns Designed & Optimized</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-big">3+</div>
-                <div class="metric-context">Years of Verified Marketing Experience</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ROBUST CONVERSION CARD SOLUTIONS DISPLAY -->
+    <!-- MY SERVICES SECTION (PLACED SECOND) -->
     <section class="services-section" id="services">
         <div class="container">
             <span class="section-tag">What I Excel At</span>
@@ -1318,142 +1087,7 @@
         </div>
     </section>
 
-    <!-- REDESIGNED STRUCTURAL CASE STUDIES SECTION -->
-    <section class="case-section" id="case-studies">
-        <div class="container">
-            <span class="section-tag">Real-World Case Breakdowns</span>
-            <h2 class="section-title">My <span>Case Studies</span></h2>
-            
-            <div class="swiper case-studies-swiper">
-                <div class="swiper-wrapper case-grid">
-                    
-                    <!-- Case Study 1 -->
-                    <div class="swiper-slide">
-                        <div class="case-card">
-                            <div class="case-thumb-placeholder" aria-hidden="true">
-                                <i class="fa-solid fa-chart-column" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
-                                <span>[ E-Commerce Scale Case View ]</span>
-                            </div>
-                            <div class="case-body">
-                                <h3>Scaling Direct-To-Consumer Store to Consistent Sales Volume</h3>
-                                <div class="case-block">
-                                    <strong>Challenge</strong>
-                                    <p>Stagnating conversion return thresholds and volatile ad account tracking fluctuations across multi-variant audiences.</p>
-                                </div>
-                                <div class="case-block">
-                                    <strong>Solution</strong>
-                                    <p>Engineered comprehensive user-generated creative testing loops along with a complete clean rewrite of the data server API tracking engine.</p>
-                                </div>
-                                <div class="case-block">
-                                    <strong>Results</strong>
-                                    <p>Stabilized customer acquisition trends over a brief lifecycle span, driving scalable numbers efficiently.</p>
-                                </div>
-                                <span class="case-result-badge">Result: Up to 12X Peak ROAS</span>
-                                <a href="#" class="case-btn">Read Full Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case Study 2 -->
-                    <div class="swiper-slide">
-                        <div class="case-card">
-                            <div class="case-thumb-placeholder" aria-hidden="true">
-                                <i class="fa-solid fa-arrow-up-right-dots" style="font-size:3rem; margin-bottom:1rem; display:block; text-align:center;"></i>
-                                <span>[ B2B Lead Acquisition Case View ]</span>
-                            </div>
-                            <div class="case-body">
-                                <h3>Driving Premium Corporate Accounts for Professional B2B Firm</h3>
-                                <div class="case-block">
-                                    <strong>Challenge</strong>
-                                    <p>Exorbitant digital click rates yielding underqualified profile inquiries that bogged down active sales operators.</p>
-                                </div>
-                                <div class="case-block">
-                                    <strong>Solution</strong>
-                                    <p>Restructured targeted search parameters coupled with high-intent question filters built into landing page flows.</p>
-                                </div>
-                                <div class="case-block">
-                                    <strong>Results</strong>
-                                    <p>Slashed acquisition spend overhead while accelerating actual downstream sales interactions safely.</p>
-                                </div>
-                                <span class="case-result-badge">Result: 200+ Qualified High-Intent Leads</span>
-                                <a href="#" class="case-btn">Read Full Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW TESTIMONIAL CAROUSEL FRAME (Configured to slide automatically) -->
-    <section class="container testimonials-section">
-        <span class="section-tag">Social Proof</span>
-        <h2 class="section-title">What Clients <span>Say</span></h2>
-        
-        <div class="swiper testimonials-swiper">
-            <div class="swiper-wrapper">
-                
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <div class="testimonial-card">
-                        <div class="stars-row">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Fakhar dramatically lowered our acquisition costs within weeks. His structured approach to creative testing completely turned our ad accounts around."</p>
-                        <div class="client-profile-block">
-                            <div class="client-avatar-placeholder" aria-hidden="true">MO</div>
-                            <div class="client-meta">
-                                <h4>Client Reference</h4>
-                                <p>E-Commerce Founder</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="testimonial-card">
-                        <div class="stars-row">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"The tracking setup alone saved us thousands in lost attribution data. I appreciate how he focuses strictly on direct revenue metrics instead of vanity vanity clicks."</p>
-                        <div class="client-profile-block">
-                            <div class="client-avatar-placeholder" aria-hidden="true">B2</div>
-                            <div class="client-meta">
-                                <h4>Enterprise Lead</h4>
-                                <p>B2B Operations Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="testimonial-card">
-                        <div class="stars-row">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Professional communication, robust daily dashboard insights, and complete execution control. Highly recommend working with Fakhar to grow your channels."</p>
-                        <div class="client-profile-block">
-                            <div class="client-avatar-placeholder" aria-hidden="true">GS</div>
-                            <div class="client-meta">
-                                <h4>Store Operator</h4>
-                                <p>Shopify Retail Merchant</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Slider Dots For Navigation Reference -->
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-    <!-- HIGH-CRO HIGH-INTENT DIRECT CALL TO ACTION BOX -->
+    <!-- HIGH-INTENT DIRECT CALL TO ACTION BOX -->
     <section class="container contact-section" id="contact">
         <div class="contact-box">
             <h2>Let's Grow Your Business</h2>
@@ -1471,7 +1105,7 @@
         </div>
     </section>
 
-    <!-- MODERN SIMPLIFIED BRAND FOOTER -->
+    <!-- MODERN BRAND FOOTER -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -1492,14 +1126,13 @@
                 <h4>Navigation</h4>
                 <ul class="footer-links">
                     <li><a href="#about">About Me</a></li>
-                    <li><a href="#results">My Results</a></li>
-                    <li><a href="#services">My Services</a></li>
                     <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#services">My Services</a></li>
+                    <li><a href="#contact">Hire Me</a></li>
                 </ul>
             </div>
         </div>
         
-        <!-- Centered Social Icons Block underneath Main Columns -->
         <div class="container footer-bottom-center">
             <h4>Connect With Me</h4>
             <div class="footer-socials">
@@ -1510,52 +1143,9 @@
         </div>
     </footer>
 
-    <!-- LIGHTWEIGHT NATIVE UI SCRIPTS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- NATIVE UI SCRIPTS -->
     <script>
-        // Initialize the Case Study Responsive Slider Engine
-        const swiperCase = new Swiper('.case-studies-swiper', {
-            slidesPerView: 1,       
-            spaceBetween: 20,       
-            loop: false,            
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,    
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2, 
-                    spaceBetween: 40,
-                    allowTouchMove: false 
-                }
-            }
-        });
-
-        // Initialize Automatically Moving Testimonials Swiper Carousel
-        const swiperTestimonials = new Swiper('.testimonials-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 24,
-            loop: true,
-            autoplay: {
-                delay: 3500, 
-                disableOnInteraction: false, 
-            },
-            pagination: {
-                el: '.testimonials-section .swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    allowTouchMove: false 
-                }
-            }
-        });
-
-        // Responsive Hamburger Mobile Nav Toggle Engine
+        // Mobile Navigation Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
