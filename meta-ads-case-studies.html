@@ -6,15 +6,16 @@
     
     <!-- Primary SEO Meta Tags -->
     <title>Meta Ads Case Studies | Fakhar Hayat</title>
-    <meta name="description" content="Explore real-world Meta Ads case studies by Fakhar Hayat. Performance marketing strategies, ROAS figures, and audience targeting breakdowns.">
+    <meta name="description" content="Explore real-world Meta Ads (Facebook & Instagram) case studies by Fakhar Hayat. Proven performance marketing strategies, ROAS figures, and lead generation systems.">
     <meta name="author" content="Fakhar Hayat">
+    <meta name="robots" content="index, follow">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* --------------------------------------------------------------------------
-           1. BRAND VARIABLES & CORE STYLES
+           1. EXACT HOMEPAGE THEME & BRANDING VARIABLES
            -------------------------------------------------------------------------- */
         :root {
             --bg-deep: #030712;         
@@ -23,6 +24,7 @@
             --border-hover: #374151;     
             --accent-primary: #2563eb;   
             --accent-success: #10b981;   
+            --action-orange: #ea580c;    
             --text-pure: #ffffff;        
             --text-muted: #9ca3af;       
             --glass-bg: rgba(11, 19, 41, 0.7);
@@ -50,7 +52,7 @@
         }
 
         body.modal-open {
-            overflow: hidden; /* Prevents background scrolling when popup is open */
+            overflow: hidden; /* Prevents background page scrolling while modal is open */
         }
 
         .container {
@@ -60,7 +62,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           2. NAVIGATION HEADER
+           2. NAVIGATION
            -------------------------------------------------------------------------- */
         header {
             position: sticky;
@@ -135,7 +137,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           3. HERO SECTION
+           3. PAGE HERO BANNER
            -------------------------------------------------------------------------- */
         .page-hero {
             padding: 4rem 0 2.5rem;
@@ -205,6 +207,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition-smooth);
+            margin-bottom: 0.25rem;
         }
 
         .filter-btn:hover {
@@ -220,7 +223,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           5. CASE STUDY CARDS GRID
+           5. CASE STUDY THUMBNAIL LAYOUT GRID
            -------------------------------------------------------------------------- */
         .case-grid-section {
             padding: 2.5rem 0 5rem;
@@ -237,9 +240,11 @@
             border: 1px solid var(--border-subtle);
             border-radius: 16px;
             overflow: hidden;
+            color: var(--text-pure);
             display: flex;
             flex-direction: column;
             transition: var(--transition-smooth);
+            position: relative;
             cursor: pointer;
         }
 
@@ -269,7 +274,7 @@
             transform: scale(1.05);
         }
 
-        .category-badge-top {
+        .category-badge {
             position: absolute;
             top: 1rem;
             left: 1rem;
@@ -282,6 +287,8 @@
             padding: 0.3rem 0.75rem;
             border-radius: 6px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
         }
 
         .stat-highlight-badge {
@@ -294,6 +301,7 @@
             font-weight: 800;
             padding: 0.35rem 0.75rem;
             border-radius: 6px;
+            z-index: 2;
         }
 
         .thumb-content {
@@ -307,6 +315,7 @@
         .thumb-title-zone h3 {
             font-size: 1.25rem;
             font-weight: 700;
+            line-height: 1.35;
             margin-bottom: 0.5rem;
             transition: var(--transition-smooth);
         }
@@ -342,7 +351,7 @@
         }
 
         /* --------------------------------------------------------------------------
-           6. STRIKE SOCIAL-STYLE MODAL POPUP SYSTEM
+           6. STRIKE SOCIAL-STYLE MODAL POPUP
            -------------------------------------------------------------------------- */
         .modal-overlay {
             position: fixed;
@@ -386,7 +395,6 @@
             transform: scale(1);
         }
 
-        /* Close Button at top corner */
         .modal-close-btn {
             position: absolute;
             top: 1.25rem;
@@ -418,7 +426,6 @@
             gap: 1.75rem;
         }
 
-        /* Header Zone inside Modal */
         .modal-header-zone {
             border-bottom: 1px solid var(--border-subtle);
             padding-bottom: 1.25rem;
@@ -459,7 +466,6 @@
             padding-right: 2.5rem;
         }
 
-        /* Metric Highlights Grid */
         .results-summary-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -488,7 +494,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Screenshot Verification Slot */
         .modal-img-container {
             width: 100%;
             border-radius: 12px;
@@ -503,7 +508,6 @@
             display: block;
         }
 
-        /* Content Blocks */
         .section-block {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-subtle);
@@ -650,19 +654,29 @@
         .social-icon:hover {
             color: var(--text-pure);
             border-color: var(--border-hover);
+            background: rgba(255,255,255,0.03);
         }
 
         /* --------------------------------------------------------------------------
            8. RESPONSIVE MEDIA QUERIES
            -------------------------------------------------------------------------- */
         @media (max-width: 1024px) {
-            .case-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1fr; }
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
-            .menu-toggle { display: block; }
+            .container {
+                padding: 0 1rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
 
             .nav-menu {
                 position: fixed;
@@ -676,14 +690,61 @@
                 padding: 2rem 1.25rem;
                 gap: 1.5rem;
                 align-items: flex-start;
-                transition: 0.4s ease;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
-            .nav-menu.active { left: 0; }
-            .page-hero h1 { font-size: 1.9rem; }
-            .case-grid { grid-template-columns: 1fr; }
-            .results-summary-grid, .two-col-grid { grid-template-columns: 1fr; }
-            .modal-content { padding: 1.5rem 1rem; }
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .page-hero {
+                padding: 2.5rem 0 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 1.9rem;
+                margin-bottom: 0.85rem;
+            }
+
+            .page-hero p {
+                font-size: 0.95rem;
+            }
+
+            .filter-section {
+                padding: 1.75rem 0 1rem;
+                margin-top: 0.5rem;
+            }
+
+            .filter-wrapper {
+                gap: 0.6rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .case-grid-section {
+                padding: 1.5rem 0 3.5rem;
+            }
+
+            .case-grid {
+                grid-template-columns: 1fr;
+                gap: 1.75rem;
+            }
+
+            .results-summary-grid, .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .footer-nav-services-group {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -698,14 +759,14 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html#top" class="nav-link">Home / About</a></li>
-                <li><a href="meta-ads-case-studies.html" class="nav-link" style="color: var(--text-pure);">Case Studies</a></li>
+                <li><a href="meta-ads-case-studies.html" class="nav-link" style="color: var(--text-pure);">Meta Case Studies</a></li>
                 <li><a href="index.html#services" class="nav-link">My Services</a></li>
                 <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- PAGE HERO BANNER -->
+    <!-- PAGE HERO HEADER -->
     <section class="page-hero">
         <div class="container">
             <span class="hero-badge"><i class="fa-brands fa-meta"></i> PROVEN RESULTS</span>
@@ -724,11 +785,11 @@
         </div>
     </section>
 
-    <!-- CASE STUDY CARDS GRID -->
+    <!-- CASE STUDY THUMBNAIL GRID -->
     <section class="case-grid-section container">
         <div class="case-grid" id="caseGrid">
 
-            <!-- Card 1: Furniture Store -->
+            <!-- 1. Furniture & Decor Store -->
             <div class="case-thumb-card" data-category="ecommerce"
                  data-title="Scaled Furniture & Home Decor Store to 18.01 ROAS"
                  data-badge="eCommerce Meta Ads"
@@ -745,7 +806,7 @@
                  data-results="Generated 18.01 ROAS in 30 days, decreasing CPC by 38% and driving consistent high-margin sales.">
                 <div class="thumb-image-wrapper">
                     <img src="assets/thumb-furniture.png" alt="Furniture Store Meta Ads Case Study" class="case-img">
-                    <span class="category-badge-top">eCommerce</span>
+                    <span class="category-badge">eCommerce</span>
                     <span class="stat-highlight-badge">18.01 ROAS</span>
                 </div>
                 <div class="thumb-content">
@@ -760,7 +821,7 @@
                 </div>
             </div>
 
-            <!-- Card 2: High-Ticket Drones -->
+            <!-- 2. High-Ticket Drone Store -->
             <div class="case-thumb-card" data-category="ecommerce"
                  data-title="High-Ticket Drone Hardware Sales Strategy"
                  data-badge="eCommerce Meta Ads"
@@ -777,7 +838,7 @@
                  data-results="Achieved 13.15 ROAS with consistent daily conversions across international markets.">
                 <div class="thumb-image-wrapper">
                     <img src="assets/thumb-drone.png" alt="High-Ticket Drone Store Meta Ads Case Study" class="case-img">
-                    <span class="category-badge-top">eCommerce</span>
+                    <span class="category-badge">eCommerce</span>
                     <span class="stat-highlight-badge">13.15 ROAS</span>
                 </div>
                 <div class="thumb-content">
@@ -792,7 +853,7 @@
                 </div>
             </div>
 
-            <!-- Card 3: Backlit Frames -->
+            <!-- 3. Decor & Backlit Art Frames -->
             <div class="case-thumb-card" data-category="ecommerce"
                  data-title="Custom Backlit Wall Art Acquisition Engine"
                  data-badge="eCommerce Meta Ads"
@@ -809,7 +870,7 @@
                  data-results="Maintained 12.4X ROAS with scalable daily spend over 3 consecutive months.">
                 <div class="thumb-image-wrapper">
                     <img src="assets/thumb-decor-frames.png" alt="Decor & Backlit Frames Meta Ads Case Study" class="case-img">
-                    <span class="category-badge-top">eCommerce</span>
+                    <span class="category-badge">eCommerce</span>
                     <span class="stat-highlight-badge">12.4X ROAS</span>
                 </div>
                 <div class="thumb-content">
@@ -824,7 +885,7 @@
                 </div>
             </div>
 
-            <!-- Card 4: Umrah Travel -->
+            <!-- 4. Umrah Travel & Tour Agency -->
             <div class="case-thumb-card" data-category="lead-gen"
                  data-title="Umrah Travel Agency Lead Generation System"
                  data-badge="Lead Generation"
@@ -841,7 +902,7 @@
                  data-results="Generated 450+ verified inquiries at £1.40 average CPL within 4 weeks.">
                 <div class="thumb-image-wrapper">
                     <img src="assets/thumb-umrah-leads.png" alt="Umrah Travel Packages Meta Ads Case Study" class="case-img">
-                    <span class="category-badge-top">Lead Gen</span>
+                    <span class="category-badge">Lead Gen</span>
                     <span class="stat-highlight-badge">£1.40 CPL</span>
                 </div>
                 <div class="thumb-content">
@@ -856,7 +917,7 @@
                 </div>
             </div>
 
-            <!-- Card 5: Local Interior Design -->
+            <!-- 5. Local Interior & Woodwork -->
             <div class="case-thumb-card" data-category="local-business"
                  data-title="Local Home Interior & Woodwork Consultation Campaign"
                  data-badge="Local Business"
@@ -873,7 +934,7 @@
                  data-results="Reduced acquisition costs down to Rs 35 per chat, booking 45+ home visits.">
                 <div class="thumb-image-wrapper">
                     <img src="assets/thumb-interior-leads.png" alt="Home Interior Redesign Meta Ads Case Study" class="case-img">
-                    <span class="category-badge-top">Local Biz</span>
+                    <span class="category-badge">Local Biz</span>
                     <span class="stat-highlight-badge">Rs 35 CPL</span>
                 </div>
                 <div class="thumb-content">
@@ -888,7 +949,7 @@
                 </div>
             </div>
 
-            <!-- Card 6: Private Label Furniture -->
+            <!-- 6. Private Label Furniture -->
             <div class="case-thumb-card" data-category="ecommerce"
                  data-title="Private Label Furniture High-Volume Traffic Campaign"
                  data-badge="eCommerce Meta Ads"
@@ -905,7 +966,7 @@
                  data-results="Drove 2,683 high-intent page views at an exceptional £0.03 Cost Per View.">
                 <div class="thumb-image-wrapper">
                     <img src="assets/thumb-cplv.png" alt="Private Label Furniture Meta Ads Case Study" class="case-img">
-                    <span class="category-badge-top">eCommerce</span>
+                    <span class="category-badge">eCommerce</span>
                     <span class="stat-highlight-badge">2,683 LPV (£0.03 CPLV)</span>
                 </div>
                 <div class="thumb-content">
@@ -926,13 +987,11 @@
     <!-- STRIKE SOCIAL-INSPIRED MODAL POPUP -->
     <div class="modal-overlay" id="caseModal">
         <div class="modal-content">
-            <!-- Close Cross Button (Top Right) -->
             <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <div class="modal-body">
-                <!-- Title & Header -->
                 <div class="modal-header-zone">
                     <div class="modal-tag-row">
                         <span class="category-badge-modal" id="modalBadge">Category</span>
@@ -941,7 +1000,6 @@
                     <h2 id="modalTitle">Case Study Title</h2>
                 </div>
 
-                <!-- 1. Key Results Summary Cards -->
                 <div class="results-summary-grid">
                     <div class="metric-card">
                         <div class="value" id="modalM1">0</div>
@@ -957,12 +1015,10 @@
                     </div>
                 </div>
 
-                <!-- 2. Campaign Verification Screenshot -->
                 <div class="modal-img-container">
                     <img src="" id="modalImg" alt="Meta Ads Manager Verification Proof Screenshot">
                 </div>
 
-                <!-- 3. Challenge & Objectives -->
                 <div class="two-col-grid">
                     <div class="section-block">
                         <h4><i class="fa-solid fa-triangle-exclamation"></i> The Challenge</h4>
@@ -974,7 +1030,6 @@
                     </div>
                 </div>
 
-                <!-- 4. Audience & Strategy -->
                 <div class="section-block">
                     <h4><i class="fa-solid fa-chess-knight"></i> Audience & Campaign Strategy</h4>
                     <ul>
@@ -984,7 +1039,6 @@
                     </ul>
                 </div>
 
-                <!-- 5. Results Breakdown -->
                 <div class="section-block">
                     <h4><i class="fa-solid fa-chart-line"></i> Final Results & Impact</h4>
                     <p id="modalResults">Results breakdown will appear here.</p>
@@ -1035,9 +1089,8 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
     <script>
-        // Mobile Nav Toggle
+        // Mobile Navigation Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
 
@@ -1048,7 +1101,7 @@
             icon.classList.toggle('fa-xmark');
         });
 
-        // Industry Filter Logic
+        // Filter Buttons Functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const caseCards = document.querySelectorAll('.case-thumb-card');
 
@@ -1070,7 +1123,7 @@
             });
         });
 
-        // Popup Modal Interactivity
+        // Popup Modal Interactivity Logic
         const caseModal = document.getElementById('caseModal');
         const modalCloseBtn = document.getElementById('modalCloseBtn');
 
@@ -1126,14 +1179,14 @@
 
         modalCloseBtn.addEventListener('click', closeModal);
 
-        // Close on backdrop click
+        // Close when clicking outside of modal container
         caseModal.addEventListener('click', (e) => {
             if (e.target === caseModal) {
                 closeModal();
             }
         });
 
-        // Close on ESC key
+        // Close on ESC key press
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && caseModal.classList.contains('active')) {
                 closeModal();
