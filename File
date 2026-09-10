@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Hover Clock</title>
 
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.social-clock {
+  position: relative;
+  --count-buttons: 7;
+  --size-button: 4rem;
+  --size-clock: 16rem;
+  width: var(--size-clock);
+  height: var(--size-clock);
+}
+
+.share-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size-button);
+  height: var(--size-button);
+  background: #000;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.social-clock__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--size-button);
+  height: var(--size-button);
+  background: #2a2a2a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transform: translate(-50%, -50%) rotate(calc(360deg / var(--count-buttons) * var(--index))) translateY(calc(var(--size-clock) / 2 - var(--size-button) / 2));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+}
+
+.social-clock__button::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 6px;
+  background: var(--clr);
+  top: 50%;
+  right: 50%;
+  transform: translateY(-50%);
+  transform-origin: right;
+  border-radius: 10px;
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+
+/* Desktop Hover */
+.social-clock__button:hover::before {
+  width: calc(var(--size-clock) / 2 - var(--size-button) / 2);
+}
+
+.social-clock__button:hover {
+  background: var(--clr);
+  transform: translate(-50%, -50%) rotate(calc(360deg / var(--count-buttons) * var(--index))) translateY(calc(var(--size-clock) / 2 - var(--size-button) / 2)) scale(1.1);
+}
+
+/* Mobile Tap Support */
+.social-clock__button:active::before,
+.social-clock__button:focus::before {
+  width: calc(var(--size-clock) / 2 - var(--size-button) / 2);
+}
+
+.social-clock__button:active,
+.social-clock__button:focus {
+  background: var(--clr);
+  outline: none;
+}
+
+/* Set index for each button to place them in circle */
+.social-clock__button:nth-child(2) { --index: 0; } /* GitHub */
+.social-clock__button:nth-child(3) { --index: 1; } /* Facebook */
+.social-clock__button:nth-child(4) { --index: 2; } /* Twitter */
+.social-clock__button:nth-child(5) { --index: 3; } /* Instagram */
+.social-clock__button:nth-child(6) { --index: 4; } /* Reddit */
+.social-clock__button:nth-child(7) { --index: 5; } /* Discord */
+.social-clock__button:nth-child(8) { --index: 6; } /* WhatsApp */
+
+/* Responsive for Mobile */
+@media (max-width: 500px) {
+  .social-clock {
+    --size-clock: 12rem;
+    --size-button: 3.2rem;
+  }
+  .share-btn {
+    font-size: 1.2rem;
+  }
+  .social-clock__button {
+    font-size: 1.2rem;
+  }
+  .title {
+    font-size: 1rem;
+  }
+}
+
+/* Remove tap highlight on mobile */
+.social-clock__button {
+  -webkit-tap-highlight-color: transparent;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <p class="title">Hover or Tap an icon ✨</p>
+  
+  <div class="social-clock">
+    <div class="share-btn">
+      <i class="fa-solid fa-share-nodes"></i>
+    </div>
+    
+    <a href="#" class="social-clock__button" style="--clr:#333" aria-label="GitHub">
+      <i class="fa-brands fa-github"></i>
+    </a>
+    <a href="#" class="social-clock__button" style="--clr:#1877f2" aria-label="Facebook">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+    <a href="#" class="social-clock__button" style="--clr:#1da1f2" aria-label="Twitter">
+      <i class="fa-brands fa-twitter"></i>
+    </a>
+    <a href="#" class="social-clock__button" style="--clr:#e4405f" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="#" class="social-clock__button" style="--clr:#ff4500" aria-label="Reddit">
+      <i class="fa-brands fa-reddit"></i>
+    </a>
+    <a href
