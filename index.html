@@ -792,7 +792,22 @@
                 flex: 0 0 85%;
             }
         }
+    
+        /* === Phase 1 UI/UX improvements === */
+        :focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; border-radius: 4px; }
+        .section-tag { color: #7fb0ff; }
+        .menu-toggle { min-width: 44px; min-height: 44px; }
+        .sticky-wa { display: none; }
+        @media (max-width: 768px) {
+            .sticky-wa { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200; background: rgba(11,19,41,0.97); border-top: 1px solid #1f2937; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
+            .sticky-wa a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 10px; background: #128c4b; color: #ffffff; font-weight: 700; text-decoration: none; font-size: 1rem; }
+            body { padding-bottom: 72px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
     </style>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
@@ -803,12 +818,12 @@
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <ul class="nav-menu" id="navMenu">
+            <nav aria-label="Main navigation"><ul class="nav-menu" id="navMenu">
                 <li><a href="#top" class="nav-link">About</a></li>
                 <li><a href="meta-ads-case-studies.html" class="nav-link">Case Studies</a></li>
                 <li><a href="#services" class="nav-link">My Services</a></li>
                 <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-            </ul>
+            </ul></nav>
         </div>
     </header>
 
@@ -836,12 +851,12 @@
                     <p>Industry Experience</p>
                 </div>
                 <div class="mini-stat-card">
-                    <h4>100+</h4>
-                    <p>Campaigns Optimized</p>
+                    <h4>18.01</h4>
+                    <p>Peak ROAS Achieved</p>
                 </div>
                 <div class="mini-stat-card">
-                    <h4>Global</h4>
-                    <p>Client Reach</p>
+                    <h4>€60K+</h4>
+                    <p>Revenue Generated From Ads</p>
                 </div>
                 <div class="mini-stat-card">
                     <h4>Meta</h4>
@@ -863,8 +878,8 @@
                 <div class="case-card">
                     <div>
                         <div class="case-icon"><i class="fa-brands fa-meta"></i></div>
-                        <h3>Meta Ads Results</h3>
-                        <p>Explore detailed case studies and proven strategies for scaling e-commerce stores and lead generation campaigns through targeted Facebook & Instagram ads.</p>
+                        <h3>18.01 ROAS — Furniture &amp; Decor Store</h3>
+                        <p>Real campaigns with real screenshots: 18.01 ROAS for a furniture &amp; decor store, 13.15 ROAS for a high-ticket drone store, and qualified leads at £1.40 CPL.</p>
                     </div>
                     <a href="meta-ads-case-studies.html" class="case-btn">View Full Case Studies <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
@@ -883,8 +898,8 @@
                 <div class="case-card">
                     <div>
                         <div class="case-icon"><i class="fa-solid fa-share-nodes"></i></div>
-                        <h3>Social Media Management</h3>
-                        <p>See how consistent content strategies, community engagement, and organic reach systems build active brand equity and audience loyalty.</p>
+                        <h3>423K Monthly Views — Social Media</h3>
+                        <p>The content systems behind 423K monthly Facebook views and 242K monthly Instagram views for managed accounts.</p>
                     </div>
                     <a href="smm-case-studies.html" class="case-btn">View Full Case Studies <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
@@ -984,12 +999,12 @@
             <div class="contact-channels">
                 <a href="mailto:fkhrhayat786@gmail.com" class="channel-btn"><i class="fa-solid fa-envelope"></i> Email Me</a>
                 <a href="tel:+923080372554" class="channel-btn"><i class="fa-solid fa-phone"></i> Call Direct</a>
-                <a href="https://wa.me/923080372554" class="channel-btn whatsapp-color" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." class="channel-btn whatsapp-color" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="channel-btn linkedin-color" target="_blank"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
                 <a href="https://www.facebook.com/fakhr.awan786" class="channel-btn facebook-color" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
             </div>
 
-            <a href="https://wa.me/923080372554" class="big-cta-action" target="_blank">Book Your Strategy Session</a>
+            <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." class="big-cta-action" target="_blank">Book Your Strategy Session</a>
         </div>
     </section>
 
@@ -1061,5 +1076,8 @@
             });
         });
     </script>
+
+    <!-- Sticky mobile WhatsApp bar -->
+    <div class="sticky-wa"><a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" rel="noopener" aria-label="Chat with Fakhar on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></div>
 </body>
 </html>
