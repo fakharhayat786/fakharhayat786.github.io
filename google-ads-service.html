@@ -302,7 +302,22 @@
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 0.95rem; }
         }
+    
+        /* === Phase 1 UI/UX improvements === */
+        :focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; border-radius: 4px; }
+        .section-tag { color: #7fb0ff; }
+        .menu-toggle { min-width: 44px; min-height: 44px; }
+        .sticky-wa { display: none; }
+        @media (max-width: 768px) {
+            .sticky-wa { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200; background: rgba(11,19,41,0.97); border-top: 1px solid #1f2937; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
+            .sticky-wa a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 10px; background: #128c4b; color: #ffffff; font-weight: 700; text-decoration: none; font-size: 1rem; }
+            body { padding-bottom: 72px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
     </style>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
@@ -321,7 +336,7 @@
         <p>I capture buyers who are actively searching for your products and services on Google, and turn that ready-to-buy intent into measurable sales and leads.</p>
         
         <div class="hero-cta-group">
-            <a href="https://wa.me/923080372554" target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Book Strategy Call</a>
+            <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Book Strategy Call</a>
             <a href="meta-ads-case-studies.html" class="btn btn-outline">View Meta Case Studies <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
@@ -409,7 +424,7 @@
         <div class="cta-box">
             <h2>Ready To Grow With Google Ads?</h2>
             <p>Let's evaluate your account and outline a customized growth strategy for your brand.</p>
-            <a href="https://wa.me/923080372554" target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp Directly</a>
+            <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp Directly</a>
         </div>
     </section>
 
@@ -420,5 +435,8 @@
         </div>
     </footer>
 
+
+    <!-- Sticky mobile WhatsApp bar -->
+    <div class="sticky-wa"><a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" rel="noopener" aria-label="Chat with Fakhar on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></div>
 </body>
 </html>
