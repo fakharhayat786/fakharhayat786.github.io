@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Page Not Found | Fakhar Hayat</title>
+    <meta name="description" content="I am Fakhar Hayat, an individual Performance Marketing Specialist. I help eCommerce brands and service businesses scale revenue with Meta Ads, Google Ads, SEO, and CRO.">
+    <meta name="author" content="Fakhar Hayat">
+    <meta name="robots" content="noindex">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fakharhayat786.github.io/">
+    <meta property="og:title" content="Fakhar Hayat | Performance Marketing Specialist">
+    <meta property="og:description" content="Data-driven marketing to increase your revenue. Specialized in Meta Ads, Google Ads, and SEO.">
+    <meta property="og:image" content="https://fakharhayat786.github.io/assets/og-image.jpg">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Fakhar Hayat | Performance Marketing Specialist">
+    <meta property="twitter:description" content="Data-driven marketing to increase your revenue. Specialized in Meta Ads, Google Ads, and SEO.">
+
+    <!-- JSON-LD Freelancer Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Fakhar Hayat Portfolio",
+      "image": "https://fakharhayat786.github.io/assets/og-image.jpg",
+      "description": "Performance Marketing Specialist helping eCommerce brands and service businesses scale revenue.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lahore",
+        "addressRegion": "Punjab",
+        "addressCountry": "Pakistan"
+      },
+      "priceRange": "$$$",
+      "knowsAbout": ["Meta Ads", "Google Ads", "SEO", "Conversion Rate Optimization", "Digital Marketing"]
+    }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --------------------------------------------------------------------------
+           1. MODERN RESET & GLOBAL STYLES
+           -------------------------------------------------------------------------- */
+        :root {
+            --bg-deep: #030712;         
+            --bg-card: #0b1329;         
+            --border-subtle: #1f2937;    
+            --border-hover: #374151;     
+            --accent-primary: #2563eb;   
+            --accent-success: #10b981;   
+            --action-orange: #ea580c;    
+            --text-pure: #ffffff;        
+            --text-muted: #9ca3af;       
+            --glass-bg: rgba(11, 19, 41, 0.7);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-deep);
+            color: var(--text-pure);
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-primary);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 2rem;
+        }
+
+        .section-title span {
+            color: var(--accent-primary);
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide scrollbars for carousels */
+        .carousel-container {
+            display: flex;
+            gap: 1.25rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 1rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* --------------------------------------------------------------------------
+           2. HEADER & STICKY NAVIGATION
+           -------------------------------------------------------------------------- */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-pure);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover {
+            color: var(--text-pure);
+        }
+
+        .nav-cta {
+            background-color: var(--accent-primary);
+            color: var(--text-pure);
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-cta:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-pure);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --------------------------------------------------------------------------
+           3. MERGED HERO & ABOUT SECTION
+           -------------------------------------------------------------------------- */
+        .hero-section {
+            padding: 3.5rem 0;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .hero-profile-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            height: 380px;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.6rem 0.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            text-align: center;
+        }
+
+        .btn-main {
+            background-color: var(--accent-primary);
+            color: var(--text-pure);
+        }
+
+        .btn-main:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-badge {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(to bottom right, #fff 60%, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .mini-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-top: 1.75rem;
+        }
+
+        .mini-stat-card {
+            background: rgba(255,255,255,0.01);
+            border: 1px solid var(--border-subtle);
+            padding: 1.25rem;
+            border-radius: 10px;
+        }
+
+        .mini-stat-card h4 {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .mini-stat-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* --------------------------------------------------------------------------
+           4. CASE STUDIES SECTION (CAROUSEL FORM)
+           -------------------------------------------------------------------------- */
+        .case-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-subtle);
+            background: rgba(255,255,255,0.01);
+        }
+
+        .case-card {
+            flex: 0 0 85%;
+            max-width: 500px;
+            scroll-snap-align: start;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+
+        .case-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        .case-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .case-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-pure);
+        }
+
+        .case-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .case-btn {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .case-card:hover .case-btn {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: var(--text-pure);
+        }
+
+        /* --------------------------------------------------------------------------
+           5. MY SERVICES SECTION (CAROUSEL FORM)
+           -------------------------------------------------------------------------- */
+        .services-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .service-card {
+            flex: 0 0 80%;
+            max-width: 320px;
+            scroll-snap-align: start;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.75rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            border-color: rgba(37, 99, 235, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(37, 99, 235, 0.06);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .service-btn {
+            text-align: center;
+            padding: 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-btn {
+            border-color: var(--accent-primary);
+            background-color: var(--accent-primary);
+        }
+
+        /* --------------------------------------------------------------------------
+           6. DIRECT CONTACT BLOCK
+           -------------------------------------------------------------------------- */
+        .contact-section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0b1329 0%, #030712 100%);
+            border: 1px solid var(--border-subtle);
+            padding: 3rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.8);
+        }
+
+        .contact-box h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-channels {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .channel-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-deep);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-pure);
+            padding: 0.65rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .channel-btn:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .channel-btn i {
+            font-size: 1rem;
+        }
+
+        .channel-btn.whatsapp-color i { color: #25d366; }
+        .channel-btn.linkedin-color i { color: #0a66c2; }
+        .channel-btn.facebook-color i { color: #1877f2; }
+
+        .big-cta-action {
+            background-color: var(--action-orange);
+            color: var(--text-pure);
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+        }
+
+        .big-cta-action:hover {
+            background-color: #c2410c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(234, 88, 12, 0.4);
+        }
+
+        /* --------------------------------------------------------------------------
+           7. FOOTER
+           -------------------------------------------------------------------------- */
+        footer {
+            background-color: #020613;
+            border-top: 1px solid var(--border-subtle);
+            padding: 2.5rem 0 1.25rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-pure);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-brand .footer-logo span {
+            color: var(--accent-primary);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .footer-nav-services-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .footer-col h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.85rem;
+            color: var(--text-pure);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-pure);
+        }
+
+        /* Reduced Negative Space Above Social Links */
+        .footer-bottom-center {
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-bottom-center h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            color: var(--text-pure);
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-icon:hover {
+            color: var(--text-pure);
+            border-color: var(--border-hover);
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* --------------------------------------------------------------------------
+           8. RESPONSIVE MEDIA QUERIES (MOBILE PADDING OPTIMIZATIONS)
+           -------------------------------------------------------------------------- */
+        @media (max-width: 1024px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero-profile-col {
+                max-width: 450px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Small negative space from sides on mobile view */
+            .container {
+                padding: 0 0.75rem;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-deep);
+                border-top: 1px solid var(--border-subtle);
+                flex-direction: column;
+                padding: 2rem 1.25rem;
+                gap: 1.5rem;
+                align-items: flex-start;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-nav-services-group {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-box {
+                padding: 2rem 1rem;
+            }
+
+            .contact-box h2 {
+                font-size: 1.75rem;
+            }
+
+            .case-card {
+                flex: 0 0 90%;
+            }
+
+            .service-card {
+                flex: 0 0 85%;
+            }
+        }
+    
+        /* === Phase 1 UI/UX improvements === */
+        :focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; border-radius: 4px; }
+        .section-tag { color: #7fb0ff; }
+        .menu-toggle { min-width: 44px; min-height: 44px; }
+        .sticky-wa { display: none; }
+        @media (max-width: 768px) {
+            .sticky-wa { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1200; background: rgba(11,19,41,0.97); border-top: 1px solid #1f2937; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
+            .sticky-wa a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 10px; background: #128c4b; color: #ffffff; font-weight: 700; text-decoration: none; font-size: 1rem; }
+            body { padding-bottom: 72px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+        }
+    
+        /* === Phase 2 UI/UX: proof strip, process, why-me, FAQ, mobile hero === */
+        .proof-strip { border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); background: var(--bg-card); padding: 1.75rem 0; }
+        .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; text-align: center; }
+        .proof-item h4 { font-size: 1.9rem; font-weight: 800; color: var(--accent-primary); margin-bottom: 0.2rem; }
+        .proof-item p { font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.5px; }
+        .process-section { padding: 4rem 0; border-top: 1px solid var(--border-subtle); }
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+        .step-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 1.5rem 1.25rem; }
+        .step-number { font-size: 1.6rem; font-weight: 800; color: var(--accent-primary); margin-bottom: 0.6rem; }
+        .step-card h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .step-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .why-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 1.75rem 1.4rem; }
+        .why-card .feature-icon, .why-card .case-icon { margin-bottom: 1rem; }
+        .why-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.55rem; }
+        .why-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+        .faq-section { padding: 4rem 0; border-top: 1px solid var(--border-subtle); }
+        .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.85rem; }
+        .faq-item { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.1rem 1.3rem; }
+        .faq-item summary { cursor: pointer; font-weight: 700; font-size: 1rem; min-height: 28px; }
+        .faq-item p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.65; margin: 0.7rem 0 0.2rem; }
+        @media (max-width: 1024px) {
+            .hero-content { order: -1; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .proof-grid { grid-template-columns: repeat(2, 1fr); }
+            .proof-item h4 { font-size: 1.5rem; }
+            .process-grid { grid-template-columns: 1fr; }
+            .profile-wrapper { height: 300px; }
+        }
+    
+        section[id] { scroll-margin-top: 90px; }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta name="theme-color" content="#030712">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <meta property="twitter:image" content="https://fakharhayat786.github.io/assets/og-image.jpg">
+</head>
+<body>
+
+    <!-- STICKY SITE NAVIGATION MENU -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">FAKHAR<span>.</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav aria-label="Main navigation"><ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#top" class="nav-link">About</a></li>
+                <li><a href="meta-ads-case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="index.html#services" class="nav-link">My Services</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
+            </ul></nav>
+        </div>
+    </header>
+    <main>
+        <section class="container" style="padding: 6rem 0; text-align: center;">
+            <span class="section-tag">Error 404</span>
+            <h1 style="font-size: 2.6rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem;">Page Not Found</h1>
+            <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto 2.25rem; line-height: 1.7;">The page you are looking for does not exist or has moved. Head back to the portfolio, or jump straight to the results.</p>
+            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html" class="big-cta-action">Back to Homepage</a>
+                <a href="meta-ads-case-studies.html" class="btn btn-outline" style="padding: 0.85rem 2rem; font-size: 1rem;">View Case Studies</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#top" class="footer-logo">FAKHAR<span>HAYAT</span></a>
+                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.</p>
+                <p style="margin-top: 1rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.</p>
+            </div>
+            
+            <!-- ROW FLEX/GRID WRAPPER FOR NAVIGATION & SERVICES SIDE-BY-SIDE -->
+            <div class="footer-nav-services-group">
+                <!-- NAVIGATION COLUMN -->
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#top">About Me</a></li>
+                        <li><a href="meta-ads-case-studies.html">Case Studies</a></li>
+                        <li><a href="index.html#services">My Services</a></li>
+                        <li><a href="index.html#contact">Hire Me</a></li>
+                    </ul>
+                </div>
+
+                <!-- SERVICES COLUMN -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="meta-ads-service.html">Meta Paid Campaigns</a></li>
+                        <li><a href="google-ads-service.html">Google Ads Engines</a></li>
+                        <li><a href="seo-service.html">Technical SEO Systems</a></li>
+                        <li><a href="analytics-service.html">Conversion Tracking</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FOOTER BOTTOM SOCIALS (MINIMAL NEGATIVE SPACE) -->
+        <div class="container footer-bottom-center">
+            <h4>Connect With Me</h4>
+            <div class="footer-socials">
+                <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/fakhr.awan786" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/fkhr.awan/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NATIVE UI SCRIPTS -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+    </script>
+
+    <!-- Sticky mobile WhatsApp bar -->
+    <div class="sticky-wa"><a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" rel="noopener" aria-label="Chat with Fakhar on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></div>
+</body>
+</html>
