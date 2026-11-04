@@ -316,8 +316,53 @@
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
         }
+    
+        /* === Phase 3: unified header/footer === */
+        .nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+        .nav-link { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 500; transition: var(--transition-smooth); }
+        .nav-link:hover { color: var(--text-pure); }
+        .nav-cta { background-color: var(--accent-primary); color: var(--text-pure); padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: var(--transition-smooth); }
+        .nav-cta:hover { background-color: #1d4ed8; }
+        .menu-toggle { display: none; background: none; border: none; color: var(--text-pure); font-size: 1.5rem; cursor: pointer; min-width: 44px; min-height: 44px; }
+        footer { background-color: #020613; border-top: 1px solid var(--border-subtle); padding: 2.5rem 0 1.25rem; text-align: left; }
+        .footer-grid { display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 2rem; align-items: start; margin-bottom: 1.5rem; }
+        .footer-brand .footer-logo { font-size: 1.25rem; font-weight: 800; color: var(--text-pure); text-decoration: none; display: block; margin-bottom: 0.75rem; }
+        .footer-brand .footer-logo span { color: var(--accent-primary); }
+        .footer-brand p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+        .footer-nav-services-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .footer-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.85rem; color: var(--text-pure); }
+        .footer-links { list-style: none; margin: 0; padding: 0; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--text-pure); }
+        .footer-bottom-center { text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 0.75rem; margin-top: 0.5rem; }
+        .footer-bottom-center h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--text-pure); }
+        .footer-socials { display: flex; justify-content: center; gap: 0.75rem; }
+        .social-icon { width: 36px; height: 36px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); text-decoration: none; font-size: 0.95rem; }
+        .social-icon:hover { color: var(--text-pure); border-color: var(--border-hover); }
+        @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-menu { position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px); background: var(--bg-deep); border-top: 1px solid var(--border-subtle); flex-direction: column; padding: 2rem 1.25rem; gap: 1.5rem; align-items: flex-start; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 999; }
+            .nav-menu.active { left: 0; }
+            .footer-nav-services-group { grid-template-columns: 1fr 1fr; gap: 1rem; }
+        }
+    
+        section[id] { scroll-margin-top: 90px; }
     </style>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta name="theme-color" content="#030712">
+    <link rel="canonical" href="https://fakharhayat786.github.io/seo-case-studies.html">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fakharhayat786.github.io/seo-case-studies.html">
+    <meta property="og:title" content="SEO Case Studies | Fakhar Hayat">
+    <meta property="og:description" content="Data-driven Meta Ads management to scale revenue on Facebook and Instagram. High-converting creative testing, audience targeting, and conversion tracking setup.">
+    <meta property="og:image" content="https://fakharhayat786.github.io/assets/og-image.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="SEO Case Studies | Fakhar Hayat">
+    <meta property="twitter:description" content="Data-driven Meta Ads management to scale revenue on Facebook and Instagram. High-converting creative testing, audience targeting, and conversion tracking setup.">
+    <meta property="twitter:image" content="https://fakharhayat786.github.io/assets/og-image.jpg">
 </head>
 <body>
 
@@ -325,7 +370,13 @@
     <header>
         <div class="container nav-wrapper">
             <a href="index.html" class="logo">FAKHAR<span>.</span></a>
-            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+            <nav aria-label="Main navigation"><ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#top" class="nav-link">About</a></li>
+                <li><a href="meta-ads-case-studies.html" class="nav-link">Case Studies</a></li>
+                <li><a href="index.html#services" class="nav-link">My Services</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
+            </ul></nav>
         </div>
     </header>
     <main>
@@ -337,7 +388,7 @@
         <p>My SEO work starts from technical audits and search intent, then fixes what actually blocks rankings. Detailed audits and ranking reports are available on request — shared privately with full context.</p>
         
         <div class="hero-cta-group">
-            <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Book Strategy Call</a>
+            <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Book Your Strategy Session</a>
             <a href="meta-ads-case-studies.html" class="btn btn-outline">View Meta Case Studies <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
@@ -425,20 +476,71 @@
         <div class="cta-box">
             <h2>Want To See An SEO Audit?</h2>
             <p>Let's evaluate your account and outline a customized growth strategy for your brand.</p>
-            <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp Directly</a>
+            <a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-main"><i class="fa-brands fa-whatsapp"></i> Book Your Strategy Session</a>
         </div>
     </section>
 
     <!-- FOOTER -->
         </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Fakhar Hayat. SEO Case Studies.</p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">FAKHAR<span>HAYAT</span></a>
+                <p>Performance Marketing Specialist delivering systematic revenue generation paths across global digital pipelines.</p>
+                <p style="margin-top: 1rem; opacity: 0.5;">&copy; 2026 Fakhar Hayat. All rights reserved.</p>
+            </div>
+            <div class="footer-nav-services-group">
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#top">About Me</a></li>
+                        <li><a href="meta-ads-case-studies.html">Case Studies</a></li>
+                        <li><a href="index.html#services">My Services</a></li>
+                        <li><a href="index.html#contact">Hire Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="meta-ads-service.html">Meta Ads Management</a></li>
+                        <li><a href="google-ads-service.html">Google Ads</a></li>
+                        <li><a href="seo-service.html">SEO Optimization</a></li>
+                        <li><a href="analytics-service.html">Analytics &amp; Tracking</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom-center">
+            <h4>Connect With Me</h4>
+            <div class="footer-socials">
+                <a href="https://pk.linkedin.com/in/fakhar-hayat-339052299" class="social-icon" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/fakhr.awan786" class="social-icon" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/fkhr.awan/" class="social-icon" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
 
 
     <!-- Sticky mobile WhatsApp bar -->
     <div class="sticky-wa"><a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" rel="noopener" aria-label="Chat with Fakhar on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-xmark');
+            });
+            document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.add('fa-bars'); icon.classList.remove('fa-xmark');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
