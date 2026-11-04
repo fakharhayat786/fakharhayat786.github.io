@@ -11,6 +11,9 @@
     <meta name="robots" content="index, follow">
 
     <!-- Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -35,7 +38,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         html {
@@ -895,6 +898,17 @@
     <meta property="twitter:title" content="Meta Ads Case Studies | Fakhar Hayat">
     <meta property="twitter:description" content="Explore real-world Meta Ads (Facebook & Instagram) case studies by Fakhar Hayat. Proven performance marketing strategies, ROAS figures, and lead generation systems.">
     <meta property="twitter:image" content="https://fakharhayat786.github.io/assets/og-image.jpg">
+    <style>
+        /* === v2 mobile audit fixes === */
+        @media (max-width: 768px) {
+            body { padding-bottom: calc(76px + env(safe-area-inset-bottom)) !important; }
+            .nav-menu .nav-link, .nav-menu .nav-cta { display: flex; align-items: center; min-height: 44px; width: 100%; }
+            .filter-btn { min-height: 44px; font-size: 0.85rem; padding: 0.55rem 1.1rem; }
+            .modal-close-btn { width: 44px; height: 44px; }
+            .metric-card .label { white-space: normal; overflow: visible; text-overflow: clip; font-size: 0.72rem; line-height: 1.35; }
+            .social-icon { width: 44px; height: 44px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -1414,5 +1428,15 @@
 
     <!-- Sticky mobile WhatsApp bar -->
     <div class="sticky-wa"><a href="https://wa.me/923080372554?text=Hi%20Fakhar%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20growing%20my%20business." target="_blank" rel="noopener" aria-label="Chat with Fakhar on WhatsApp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></div>
+
+    <script>
+        (function(){
+            var t=document.getElementById('menuToggle'), m=document.getElementById('navMenu');
+            if(t && m){
+                t.addEventListener('click', function(){ document.body.style.overflow = m.classList.contains('active') ? 'hidden' : ''; });
+                m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ document.body.style.overflow=''; }); });
+            }
+        })();
+    </script>
 </body>
 </html>
